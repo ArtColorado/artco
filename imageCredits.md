@@ -12,8 +12,5 @@ Photo by <a href="https://unsplash.com/@jazzrose?utm_content=creditCopyText&utm_
 
 Photo by <a href="https://unsplash.com/@itsmiki5?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Milan Popovic</a> on <a href="https://unsplash.com/photos/two-hammers-beside-screwdriver-BmyXTxyDL-I?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 
-photography
-Photo by <a href="https://unsplash.com/@baileymahon?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">BAILEY MAHON</a> on <a href="https://unsplash.com/photos/person-holding-black-dslr-camera-2b6K4uy0Hbc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-
 photography2
 Photo by <a href="https://unsplash.com/@jamie452?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Jamie Street</a> on <a href="https://unsplash.com/photos/black-digital-camera-capturing-yellow-flower-qWYvQMIJyfE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>

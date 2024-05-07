@@ -1,0 +1,59 @@
+[
+  {
+    "name": "Claude Monet",
+    "image": "../assets/image-artists/Claude_Monet.jpg",
+    "bio": "Oscar-Claude Monet was a French painter and founder of impressionist painting who is seen as a key precursor to modernism, especially in his attempts to paint nature as he perceived it. During his long career, he was the most consistent and prolific practitioner of impressionism's philosophy of expressing one's perceptions of nature, especially as applied to plain air (outdoor) landscape painting. The term 'Impressionism' is derived from the title of his painting Impression, soleil levant, exhibited in 1874, initiated by Monet and his associates as an alternative to the Salon.",
+    "artwork": [
+      {
+        "image": "../assets/images-artwork/Claude_Monet_Agapanthus.jpg",
+        "category": "painting"
+      },
+      {
+        "image": "../assets/images-artwork/Claude_Monet_La_Grenouillére.jpg",
+        "category": "painting"
+      },
+      {
+        "image": "../assets/images-artwork/Claude_Monet_On_the_Bank_of_the_Seine.jpg",
+        "category": "painting"
+      }
+    ]
+  },
+  {
+    "name": "Georgia O'Keeffe",
+    "image": "../assets/image-artists/Georgia_OKeeffe.jpg",
+    "bio": "Georgia Totto O'Keeffe was an American modernist painter and draftswoman whose career spanned seven decades and whose work remained largely independent of major art movements. Called the 'Mother of American modernism', O'Keeffe gained international recognition for her meticulous paintings of natural forms, particularly flowers and desert-inspired landscapes, which were often drawn from and related to places and environments in which she lived.",
+    "artwork": [
+        {
+          "image": "../assets/images-artwork/Georgia_OKeeffe_Blue_and_Green_Music.jpg",
+          "category": "painting"
+        },
+        {
+          "image": "../assets/images-artwork/Georgia_OKeeffe_Red_Canna.jpg",
+          "category": "painting"
+        },
+        {
+          "image": "../assets/images-artwork/Georgia_OKeeffe_Pineapple_Bud.jpg",
+          "category": "painting"
+        }
+      ]
+  },
+  {
+    "name": "Georgia O'Keeffe",
+    "image": "../assets/image-artists/Georgia_OKeeffe.jpg",
+    "bio": "Georgia Totto O'Keeffe was an American modernist painter and draftswoman whose career spanned seven decades and whose work remained largely independent of major art movements. Called the 'Mother of American modernism', O'Keeffe gained international recognition for her meticulous paintings of natural forms, particularly flowers and desert-inspired landscapes, which were often drawn from and related to places and environments in which she lived.",
+    "artwork": [
+        {
+          "image": "../assets/images-artwork/Georgia_OKeeffe_Blue_and_Green_Music.jpg",
+          "category": "painting"
+        },
+        {
+          "image": "../assets/images-artwork/Georgia_OKeeffe_Red_Canna.jpg",
+          "category": "painting"
+        },
+        {
+          "image": "../assets/images-artwork/Georgia_OKeeffe_Pineapple_Bud.jpg",
+          "category": "painting"
+        }
+      ]
+  }
+]
