@@ -6,13 +6,45 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 
 import App from "./App.jsx";
+import Home from "./pages/Home.jsx";
+import Login from "./pages/Login.jsx";
+import Signup from "./pages/Signup.jsx";
+import Profile from "./pages/Profile.jsx";
+import Artist from "./pages/Artist.jsx";
+import Event from "./pages/Event.jsx";
+import ErrorPage from "./pages/ErrorPage.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <Error />,
-    children: [],
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/signup",
+        element: <Signup />,
+      },
+      {
+        path: "/artist/:username",
+        element: <Artist />,
+      },
+      {
+        path: "/me",
+        element: <Profile />,
+      },
+      {
+        path: "/event",
+        element: <Event />,
+      },
+    ],
   },
 ]);
 
