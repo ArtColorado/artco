@@ -1,0 +1,12 @@
+@import url("../../index.css");
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background-color: var(--brown-9);
+  color: white;
+  padding: 10px;
+}

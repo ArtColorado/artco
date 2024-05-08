@@ -24,7 +24,8 @@ const userSchema = new Schema(
       required: true,
       minlength: 8,
     },
-    favorite_artist: [Artist],
+    artistData: Artist,
+    favorite_artists: [Artist],
     events: [
       {
         type: Schema.Types.ObjectId,

@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
+import "./footer.css";
 
 const Footer = () => {
   return (
     <>
-      <h3>© Copyright 2024. Made by :groupname:</h3>
+    <footer className="footer">
+      <h6>© Copyright 2024. Made by artCO</h6>
+    </footer>
     </>
   );
 };
