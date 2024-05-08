@@ -40,12 +40,14 @@ const resolvers = {
       return { token, user };
     },
 
-    addArtwork: async (parent, { title, imageURL, stock, description }) => {
-      return Artwork.create({ title, imageURL, stock, description });
+    addArtwork: async (parent, { title, imageURL, stock, description, }, context) => {
+      if (context.user)
+      {return Artwork.create({ title, imageURL, stock, description });}
     },
 
-    updateArtwork: async (parent, { title, imageURL, stock, description }) => {
-      return Artwork.findOneandUpdate(
+    updateArtwork: async (parent, { title, imageURL, stock, description }, context) => {
+      if (context.user)
+      {return Artwork.findOneandUpdate(
         { _id: _id },
         {
           $addToSet: {
@@ -58,19 +60,20 @@ const resolvers = {
         {
           new: true,
           runValidators: true,
-        }
+        },
       );
+    }
     },
 
     removeArtwork: async (parent, { artworkId }) => {
       return Artwork.findOneandDelete({ _id: artworkId });
     },
-    createArtist: async (parent, { userId, bio }, context) => {
+    createArtist: async (parent, { bio }, context) => {
       if (context.user) {
         return User.findOneandUpdate(
-          { _id: userId },
+          { _id: context.user._id},
           {
-            $addToSet: { bio: bio },
+            $addToSet: { artistData: {bio: bio} },
           },
 
           { new: true, runValidators: true }

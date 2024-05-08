@@ -5,28 +5,29 @@ type Artwork {
     imageURL: String!
     stock: Int!
     description: String!
+    artist: User!
 }
 
 type Artist {
-    _id: ID!
     bio: String!
-    events: [Event!]!
-    artWorks: [Artwork!]!
+    events: [Event]
+    artWorks: [Artwork]
 }
 
 type Event {
-    name: String
-    location: String
-    date: Date
+    name: String!
+    location: String!
+    date: Date!
     artists: [Artist]
 }
 
 type User {
-    _id: ID
-    username: String
+    _id: ID!
+    username: String!
     address: String
-    email: String
-    password: String
+    email: String!
+    password: String!
+    artistData: Artist
     favorite_artists: [Artist]
     events: [Events]
 }
@@ -39,7 +40,8 @@ type Auth {
 type Query {
     users: [User]!
     user(userId: ID!): User
-    artwork: [artworkId: ID!] Artwork
+    artwork(artworkId: ID!): Artwork
+
 }
 
 type Mutation {
@@ -48,20 +50,8 @@ type Mutation {
    addArtwork( title: String!, imageURL: String!, stock: Int!, description: String!) Artwork
    updateArtwork: ( title: String!, imageURL: String!, stock: Int!, description: String!) Artwork
    removeArtwork: Artwork
-   createArtist: (userId: ID!, bio: String)
+   createArtist: (bio: String): User
 }
-
-type Mutation {
-   
-    addProfile(username: String!, email: String!, password: String!, address: String): Auth
-    login(email: String!, password: String!): Auth
-
-    addSkill(profileId: ID!, skill: String!): Profile
-    removeProfile(profileId: ID!): Profile
-    removeSkill(profileId: ID!, skill: String!): Profile
-  }
-
-
 
 `;
 
