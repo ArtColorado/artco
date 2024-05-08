@@ -1,1 +1,12 @@
 @import url("../../index.css");
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background-color: var(--brown-9);
+  color: var(--brown-5);
+  padding: 10px;
+}
