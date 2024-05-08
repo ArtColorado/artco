@@ -39,6 +39,7 @@ type Auth {
 type Query {
     users: [User]!
     user(userId: ID!): User
+    artwork: [artworkId: ID!] Artwork
 }
 
 type Mutation {
