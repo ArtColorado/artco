@@ -35,6 +35,6 @@ artWorkSchema.virtual("artWorkCount").get(function () {
   return this.title.length;
 });
 
-const ArtWork = model("artwork", artWorkSchema);
+const Artwork = model("artwork", artWorkSchema);
 
-module.exports = ArtWork;
+module.exports = Artwork;

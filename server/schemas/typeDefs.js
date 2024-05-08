@@ -44,6 +44,10 @@ type Query {
 type Mutation {
     addUser(username: String!, email: String!, password: String!, address: String): Auth
     login(email: String!, password: String!): Auth
+   addArtwork( title: String!, imageURL: String!, stock: Int!, description: String!) Artwork
+   updateArtwork: ( title: String!, imageURL: String!, stock: Int!, description: String!) Artwork
+   removeArtwork: Artwork
+   createArtist: (userId: ID!, bio: String)
 }
 
 type Mutation {
