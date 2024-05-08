@@ -1,17 +1,17 @@
 const typeDefs = `
 type Artwork {
-    _id: ID
-    title: String
-    image: String
-    stock: Int
-    description: String
+    _id: ID!
+    title: String!
+    imageURL: String!
+    stock: Int!
+    description: String!
 }
 
 type Artist {
-    artistId: ID
-    bio: String
-    events: Array
-    artWorks: Array
+    _id: ID!
+    bio: String!
+    events: [Event!]!
+    artWorks: [Artwork!]!
 }
 
 type Event {
@@ -44,6 +44,10 @@ type Query {
 type Mutation {
     addUser(username: String!, email: String!, password: String!, address: String): Auth
     login(email: String!, password: String!): Auth
+   addArtwork( title: String!, imageURL: String!, stock: Int!, description: String!) Artwork
+   updateArtwork: ( title: String!, imageURL: String!, stock: Int!, description: String!) Artwork
+   removeArtwork: Artwork
+   createArtist: (userId: ID!, bio: String)
 }
 
 type Mutation {

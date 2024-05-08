@@ -1,4 +1,4 @@
-const { User } = require("../models");
+const { User, Artwork } = require("../models");
 const { signToken, AuthenticationError } = require("../utils/auth");
 
 const resolvers = {
@@ -34,6 +34,44 @@ const resolvers = {
 
       const token = signToken(user);
       return { token, user };
+    },
+
+    addArtwork: async (parent, { title, imageURL, stock, description }) => {
+      return Artwork.create({ title, imageURL, stock, description });
+    },
+
+    updateArtwork: async (parent, { title, imageURL, stock, description }) => {
+      return Artwork.findOneandUpdate(
+        { _id: _id },
+        {
+          $addToSet: {
+            titel: title,
+            imageURL: imageURL,
+            stock: stock,
+            description: description,
+          },
+        },
+        {
+          new: true,
+          runValidators: true,
+        }
+      );
+    },
+
+    removeArtwork: async (parent, { artworkId }) => {
+      return Artwork.findOneandDelete({ _id: artworkId });
+    },
+    createArtist: async (parent, { userId, bio }, context) => {
+      if (context.user) {
+        return User.findOneandUpdate(
+          { _id: userId },
+          {
+            $addToSet: { bio: bio },
+          },
+
+          { new: true, runValidators: true }
+        );
+      }
     },
   },
 };
