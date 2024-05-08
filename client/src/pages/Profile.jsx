@@ -1,6 +1,6 @@
 import Auth from "../utils/auth";
 
-import Artist from "./";
+import Artist from "./Artist";
 
 const Profile = () => {
   return (
