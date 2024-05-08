@@ -10,7 +10,7 @@ const artWorkSchema = new Schema(
       type: String,
     },
     stock: {
-      type: Int,
+      type: Number,
       default: 1,
       required: true,
     },

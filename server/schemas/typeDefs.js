@@ -17,7 +17,7 @@ type Artist {
 type Event {
     name: String!
     location: String!
-    date: Date!
+    date: String!
     artists: [Artist]
 }
 
@@ -47,10 +47,10 @@ type Query {
 type Mutation {
     addUser(username: String!, email: String!, password: String!, address: String): Auth
     login(email: String!, password: String!): Auth
-   addArtwork( title: String!, imageURL: String!, stock: Int!, description: String!) Artwork
-   updateArtwork: ( title: String!, imageURL: String!, stock: Int!, description: String!) Artwork
+   addArtwork( title: String!, imageURL: String!, stock: Int!, description: String!): Artwork
+   updateArtwork(title: String!, imageURL: String!, stock: Int!, description: String!): Artwork
    removeArtwork: Artwork
-   createArtist: (bio: String): User
+   createArtist(bio: String!): User
 }
 
 `;
