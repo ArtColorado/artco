@@ -1,6 +1,6 @@
 @import url("../../index.css");
 
-.header {
+.navbar {
   position: absolute;
   top: 0;
   left: 0;
@@ -8,5 +8,9 @@
   height: auto;
   background-color: var(--brown-9);
   color: var(--brown-5);
-  padding: 10px;
+  /* padding: 10px; */
+}
+
+.navbar-expand {
+  justify-content: center;
 }
