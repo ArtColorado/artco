@@ -2,6 +2,21 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  --green-0: #f1f5f0;
+  --green-1: #b9cbb3;
+  --green-2: #4c6444;
+  --green-3: #102820;
+  --green-4: #0c0f0a;
+  --brown-0: #f7f2ee;
+  --brown-1: #e7d8cb;
+  --brown-2: #d7bda8;
+  --brown-3: #c6a385;
+  --brown-4: #b68962;
+  --brown-5: #9d6f49;
+  --brown-6: #7a5739;
+  --brown-7: #573e28;
+  --brown-8: #342518;
+  --brown-9: #110c08;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
