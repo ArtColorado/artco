@@ -17,15 +17,17 @@
   --brown-7: #573e28;
   --brown-8: #342518;
   --brown-9: #110c08;
-
   color-scheme: light dark;
   color: var(--brown-0);
-  background-color: var(--brown-9);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
 }
 
 a {
@@ -40,9 +42,9 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--brown-0);
 }
 
 h1 {
