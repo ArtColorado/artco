@@ -46,36 +46,36 @@ const Header = () => {
                   Home
                 </Link>
               </li>
-              {Auth.loggedIn() ? (
-                <>
-                  <li className="nav-item">
-                    <Link className="nav-link" href="/userpage">
-                      My Collection
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link className="nav-link" href="/addArtist">
-                      Add an Artist
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link className="nav-link" href="/addRecord">
-                      Add an Album
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link className="nav-link" href="#" id="logout">
-                      Logout
-                    </Link>
-                  </li>
-                </>
-              ) : (
-                <li className="nav-item">
-                  <Link className="nav-link" href="/login">
-                    Login/Signup
-                  </Link>
-                </li>
-              )}
+              {/* {Auth.loggedIn() ? ( */}
+              {/* <> */}
+              <li className="nav-item">
+                <Link className="nav-link" href="/userpage">
+                  My Collection
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" href="/addArtist">
+                  Add an Artist
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" href="/addRecord">
+                  Add an Album
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" href="#" id="logout">
+                  Logout
+                </Link>
+              </li>
+              {/* </> */}
+              {/* ) : ( */}
+              <li className="nav-item">
+                <Link className="nav-link" href="/login">
+                  Login/Signup
+                </Link>
+              </li>
+              {/* )} */}
             </Nav>
           </Offcanvas.Body>
         </Offcanvas>
