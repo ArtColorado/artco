@@ -1,5 +1,7 @@
 ## Credits
 
+Seed artist photos, bios, and artworks were found on Wikipedia.
+
 Photo Credits:
 
 Photo by <a href="https://unsplash.com/@crystalmind_design?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Chloe Bolton</a> on <a href="https://unsplash.com/photos/white-and-brown-ceramic-vase-R0qthXq3jec?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>

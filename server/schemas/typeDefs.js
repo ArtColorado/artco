@@ -29,7 +29,7 @@ type User {
     password: String!
     artistData: Artist
     favorite_artists: [Artist]
-    events: [Events]
+    events: [Event]
 }
 
 type Auth {

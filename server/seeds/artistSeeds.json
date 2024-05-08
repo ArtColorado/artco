@@ -23,37 +23,227 @@
     "image": "../assets/image-artists/Georgia_OKeeffe.jpg",
     "bio": "Georgia Totto O'Keeffe was an American modernist painter and draftswoman whose career spanned seven decades and whose work remained largely independent of major art movements. Called the 'Mother of American modernism', O'Keeffe gained international recognition for her meticulous paintings of natural forms, particularly flowers and desert-inspired landscapes, which were often drawn from and related to places and environments in which she lived.",
     "artwork": [
-        {
-          "image": "../assets/images-artwork/Georgia_OKeeffe_Blue_and_Green_Music.jpg",
-          "category": "painting"
-        },
-        {
-          "image": "../assets/images-artwork/Georgia_OKeeffe_Red_Canna.jpg",
-          "category": "painting"
-        },
-        {
-          "image": "../assets/images-artwork/Georgia_OKeeffe_Pineapple_Bud.jpg",
-          "category": "painting"
-        }
-      ]
+      {
+        "image": "../assets/images-artwork/Georgia_OKeeffe_Blue_and_Green_Music.jpg",
+        "category": "painting"
+      },
+      {
+        "image": "../assets/images-artwork/Georgia_OKeeffe_Red_Canna.jpg",
+        "category": "painting"
+      },
+      {
+        "image": "../assets/images-artwork/Georgia_OKeeffe_Pineapple_Bud.jpg",
+        "category": "painting"
+      }
+    ]
   },
   {
-    "name": "Georgia O'Keeffe",
-    "image": "../assets/image-artists/Georgia_OKeeffe.jpg",
-    "bio": "Georgia Totto O'Keeffe was an American modernist painter and draftswoman whose career spanned seven decades and whose work remained largely independent of major art movements. Called the 'Mother of American modernism', O'Keeffe gained international recognition for her meticulous paintings of natural forms, particularly flowers and desert-inspired landscapes, which were often drawn from and related to places and environments in which she lived.",
+    "name": "Andy Warhol",
+    "image": "../assets/image-artists/Andy_Warhol.jpg",
+    "bio": "Andy Warhol was an American visual artist, film director and producer. A leading figure in the pop art movement, Warhol is considered one of the most important American artists of the second half of the 20th century. His works explore the relationship between artistic expression, advertising, and celebrity culture that flourished by the 1960s, and span a variety of media, including painting, silkscreening, photography, film, and sculpture. Some of his best-known works include the silkscreen paintings Campbell's Soup Cans (1962) and Marilyn Diptych (1962), the experimental films Empire (1964) and Chelsea Girls (1966), and the multimedia events known as the Exploding Plastic Inevitable (1966–67).",
     "artwork": [
-        {
-          "image": "../assets/images-artwork/Georgia_OKeeffe_Blue_and_Green_Music.jpg",
-          "category": "painting"
-        },
-        {
-          "image": "../assets/images-artwork/Georgia_OKeeffe_Red_Canna.jpg",
-          "category": "painting"
-        },
-        {
-          "image": "../assets/images-artwork/Georgia_OKeeffe_Pineapple_Bud.jpg",
-          "category": "painting"
-        }
-      ]
+      {
+        "image": "../assets/images-artwork/Andy_Warhol_Pom.jpg",
+        "category": "painting"
+      },
+      {
+        "image": "../assets/images-artwork/Andy_Warhol_Self-Portrait.jpg",
+        "category": "painting"
+      },
+      {
+        "image": "../assets/images-artwork/Andy_Warhol_Skulls.jpg",
+        "category": "painting"
+      }
+    ]
+  },
+  {
+    "name": "Sheila Hicks",
+    "image": "../assets/image-artists/Sheila_Hicks.jpg",
+    "bio": "Sheila Hicks is an American artist. She is known for her innovative and experimental weavings and sculptural textile art that incorporate distinctive colors, natural materials, and personal narratives. Since 1964, she has lived and worked in Paris, France. Prior to that, she lived and worked in Guerrero, Mexico from 1959 to 1963.",
+    "artwork": [
+      {
+        "image": "../assets/images-artwork/Sheila_Hicks_Fugue.jpg",
+        "category": "textile"
+      },
+      {
+        "image": "../assets/images-artwork/Sheila_Hicks_Grand_Boules.jpg",
+        "category": "textile"
+      },
+      {
+        "image": "../assets/images-artwork/Sheila_Hicks_Linen_Lean-To.jpg",
+        "category": "textile"
+      }
+    ]
+  },
+  {
+    "name": "Elizabeth Zimmermann",
+    "image": "../assets/image-artists/Elizabeth_Zimmerman.jpg",
+    "bio": "Elizabeth Zimmermann was a British-born hand knitting teacher and designer. She revolutionized the modern practice of knitting through her books and instructional series on American public television. Though knitting back and forth on rigid straight needles was the norm, she advocated knitting in the round using flexible circular needles to produce seamless garments and to make it easier to knit intricate patterns. She also advocated the Continental knitting method, claiming that it is the most efficient and quickest way to knit. During World War II, German or continental knitting fell out of favor in the UK and US due to its association with Germany. Many English-language books on knitting are in the English or American style. Elizabeth Zimmermann helped to re-introduce continental style knitting to the United States.",
+    "artwork": [
+      {
+        "image": "../assets/images-artwork/Elizabeth_Zimmerman_Baby_Surprise_Jacket.jpg",
+        "category": "textile"
+      },
+      {
+        "image": "../assets/images-artwork/Elizabeth_Zimmerman_Contrast_Cardigan.jpg",
+        "category": "textile"
+      },
+      {
+        "image": "../assets/images-artwork/Elizabeth_Zimmerman_Knitting_Around.jpg",
+        "category": "textile"
+      }
+    ]
+  },
+  {
+    "name": "Art Smith",
+    "image": "../assets/image-artists/Art_Smith.jpg",
+    "bio": "Arthur George 'Art' Smith was one of the leading modernist jewelers of the mid-20th century, and one of the few Afro-Caribbean people working in the field to reach international recognition. He trained at Cooper Union, NYU, and under Winifred Mason.",
+    "artwork": [
+      {
+        "image": "../assets/images-artwork/Art_Smith_Spirali_in_Diminuzione.jpg",
+        "category": "jewelry"
+      },
+      {
+        "image": "../assets/images-artwork/Art_Smith_Galaxy_Necklace.jpg",
+        "category": "jewelry"
+      },
+      {
+        "image": "../assets/images-artwork/Art_Smith_Neckpiece.jpg",
+        "category": "jewelry"
+      }
+    ]
+  },
+  {
+    "name": "Lucien Gaillard",
+    "image": "../assets/image-artists/Lucien_Gaillard.jpg",
+    "bio": "Lucien Gaillard was a French goldsmith and jeweller, who worked in the art nouveau style. Lucien Gaillard was born into a family of jewellers. His grandfather Amédée Alexandre Gaillard founded a jewellery firm in Paris in 1840, which he then passed on to his son Ernest. Lucien Gaillard trained as an apprentice under his father, before taking over the business in 1892. His brother Eugéne was also a well known art nouveau furniture designer.",
+    "artwork": [
+      {
+        "image": "../assets/images-artwork/Lucien_Gaillard_Moth.jpg",
+        "category": "jewelry"
+      },
+      {
+        "image": "../assets/images-artwork/Lucien_Gaillard_Buckle.jpg",
+        "category": "jewelry"
+      },
+      {
+        "image": "../assets/images-artwork/Lucien_Gaillard_Comb.jpg",
+        "category": "jewelry"
+      }
+    ]
+  },
+  {
+    "name": "Christopher Dresser",
+    "image": "../assets/image-artists/Christopher_Dresser.jpg",
+    "bio": "Christopher Dresser was a British designer and design theorist, now widely known as one of the first and most important independent designers. He was a pivotal figure in the Aesthetic Movement and a major contributor to the allied Anglo-Japanese or Modern Style (British Art Nouveau style), both of which originated in England and had long-lasting international influence.",
+    "artwork": [
+      {
+        "image": "../assets/images-artwork/Christopher_Dresser_Soup_Plate.jpg",
+        "category": "pottery"
+      },
+      {
+        "image": "../assets/images-artwork/Christopher_Dresser_Bottle_Vase.jpg",
+        "category": "pottery"
+      },
+      {
+        "image": "../assets/images-artwork/Christopher_Dresser_Pitcher.jpg",
+        "category": "pottery"
+      }
+    ]
+  },
+  {
+    "name": "Katherine Choy",
+    "image": "../assets/image-artists/Katherine_Choy.jpg",
+    "bio": "Katherine Choy was an American artist, known for her work with ceramics and pottery. She was born into an affluent family in Hong Kong in 1927, and raised in Shanghai. In 1946, Choy went to study in the United States, first at Wesleyan College in Macon, Georgia. In 1948, she transferred to Mills College to be near family in California, earning her bachelor's degree in 1950 and a master's degree in 1951. In 1952, she became the head of the ceramics department at the Newcomb College at Tulane University in New Orleans. In 1957, she started the Clay Art Center in Port Chester, NY.",
+    "artwork": [
+      {
+        "image": "../assets/images-artwork/Katherine_Choy_Bottle.jpg",
+        "category": "pottery"
+      },
+      {
+        "image": "../assets/images-artwork/Katherine_Choy_Double_Spout_Vase.jpg",
+        "category": "pottery"
+      },
+      {
+        "image": "../assets/images-artwork/Katherine_Choy_Vases.jpg",
+        "category": "pottery"
+      }
+    ]
+  },
+  {
+    "name": "Dorothea Lange",
+    "image": "../assets/image-artists/Dorothea_Lange.jpg",
+    "bio": "Dorothea Lange was an American documentary photographer and photojournalist, best known for her Depression-era work for the Farm Security Administration (FSA). Lange's photographs influenced the development of documentary photography and humanized the consequences of the Great Depression.",
+    "artwork": [
+      {
+        "image": "../assets/images-artwork/Dorothea_Lange_Manzanar.jpg",
+        "category": "photography"
+      },
+      {
+        "image": "../assets/images-artwork/Dorothea_Lange_Migrant_Mother.jpg",
+        "category": "photography"
+      },
+      {
+        "image": "../assets/images-artwork/Dorothea_Lange_Pledge_Allegiance.jpg",
+        "category": "photography"
+      }
+    ]
+  },
+  {
+    "name": "Ansel Adams",
+    "image": "../assets/image-artists/Ansel_Adams.jpg",
+    "bio": "Ansel Easton Adams was an American landscape photographer and environmentalist known for his black-and-white images of the American West. He helped found Group f/64, an association of photographers advocating 'pure' photography which favored sharp focus and the use of the full tonal range of a photograph. He and Fred Archer developed a system of image-making called the Zone System, a method of achieving a desired final print through a technical understanding of how the tonal range of an image is the result of choices made in exposure, negative development, and printing.",
+    "artwork": [
+      {
+        "image": "../assets/images-artwork/Ansel_Adams_Lodgepole_Pines.jpg",
+        "category": "photography"
+      },
+      {
+        "image": "../assets/images-artwork/Ansel_Adams_Monolith.jpg",
+        "category": "photography"
+      },
+      {
+        "image": "../assets/images-artwork/Ansel_Adams_Leaves.jpg",
+        "category": "photography"
+      }
+    ]
+  },
+  {
+    "name": "Thomas Chippendale",
+    "image": "../assets/image-artists/Thomas_Chippendale.jpg",
+    "bio": "Thomas Chippendale was a cabinet-maker in London, designing furniture in the mid-Georgian, English Rococo, and Neoclassical styles. In 1754 he published a book of his designs in a trade catalogue titled The Gentleman and Cabinet Maker's Director—the most important collection of furniture designs published in England to that point which created a mass market for furniture—upon which success he became renowned. According to the Victoria and Albert Museum, 'so influential were his designs, in Britain and throughout Europe and America, that 'Chippendale' became a shorthand description for any furniture similar to his Director designs'.",
+    "artwork": [
+      {
+        "image": "../assets/images-artwork/Thomas_Chippendale_Pembroke_Table.jpg",
+        "category": "woodworking"
+      },
+      {
+        "image": "../assets/images-artwork/Thomas_Chippendale_Secretaire.jpg",
+        "category": "woodworking"
+      },
+      {
+        "image": "../assets/images-artwork/Thomas_Chippendale_Pedestal_and_Urn.jpg",
+        "category": "woodworking"
+      }
+    ]
+  },
+  {
+    "name": "Gustav Stickley",
+    "image": "../assets/image-artists/Gustav_Stickley.jpg",
+    "bio": "Gustav Stickley was an American furniture manufacturer, design leader, publisher, and a leading voice in the American Arts and Crafts movement. Stickley's design philosophy was a major influence on American Craftsman architecture.",
+    "artwork": [
+      {
+        "image": "../assets/images-artwork/Gustav_Stickley_Chair_2342.jpg",
+        "category": "woodworking"
+      },
+      {
+        "image": "../assets/images-artwork/Gustav_Stickley_Library_Table.jpg",
+        "category": "woodworking"
+      },
+      {
+        "image": "../assets/images-artwork/Gustav_Stickley_Vanity.jpg",
+        "category": "woodworking"
+      }
+    ]
   }
 ]

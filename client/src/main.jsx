@@ -33,10 +33,12 @@ const router = createBrowserRouter([
         element: <Signup />,
       },
       {
+        //Bring up specific artist
         path: "/artist/:username",
         element: <Artist />,
       },
       {
+        //For logged in user's profile
         path: "/me",
         element: <Profile />,
       },
