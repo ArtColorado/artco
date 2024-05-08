@@ -18,7 +18,7 @@ type Event {
     name: String
     location: String
     date: Date
-    artists: [Artist]
+    artists: [Artist!]!
 }
 
 type User {
@@ -27,8 +27,8 @@ type User {
     address: String
     email: String
     password: String
-    favorite_artists: [Artist]
-    events: [Events]
+    favorite_artists: [Artist!]!
+    events: [Events!]!
 }
 
 type Auth {
