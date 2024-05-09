@@ -1,0 +1,7 @@
+@import url("../index.css");
+
+.whole-form {
+    border: 2px solid;
+    border-color: var(--brown-5);
+    padding: 1rem;
+}

@@ -19,7 +19,6 @@
   --brown-9: #110c08;
   color-scheme: light dark;
   color: var(--brown-0);
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -28,6 +27,7 @@
 
 #root {
   width: 100%;
+  
 }
 
 a {
@@ -81,15 +81,27 @@ button:focus-visible {
 .row {
   margin: 30px 0px 30px 0px;
 }
-@media (prefers-color-scheme: light) {
-  :root {
-    color: var(--brown-9);
-    background-color: var(--brown-0);
+
+@media (min-width: 768px) {
+  .site-width {
+    width: 80%;
   }
-  a:hover {
-    color: #747bff;
+  label {
+    width: 20%;
   }
-  button {
-    background-color: var(--brown-2);
+  input {
+    width: 79%;
+  }
+}
+
+@media (min-width: 992px) {
+  .site-width {
+    width: 70%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .site-width {
+    width: 60%;
   }
 }
