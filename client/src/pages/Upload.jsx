@@ -1,9 +1,9 @@
 import { useState } from "react";
-import CloudinaryUploadWidget from "./CloudinaryUploadWidget";
+import CloudinaryUploadWidget from "../components/Upload/index";
 import { Cloudinary } from "@cloudinary/url-gen";
 import { AdvancedImage, responsive, placeholder } from "@cloudinary/react";
 
-import "./styles.css";
+// import "./styles.css";
 
 export default function App() {
   const [publicId, setPublicId] = useState("");
@@ -22,7 +22,7 @@ export default function App() {
 
   const [uwConfig] = useState({
     cloudName,
-    uploadPreset
+    uploadPreset,
     // cropping: true, //add a cropping step
     // showAdvancedOptions: true,  //add advanced options (public_id and tag)
     // sources: [ "local", "url"], // restrict the upload sources to URL and local files
@@ -39,8 +39,8 @@ export default function App() {
   // Create a Cloudinary instance and set your cloud name.
   const cld = new Cloudinary({
     cloud: {
-      cloudName
-    }
+      cloudName,
+    },
   });
 
   const myImage = cld.image(publicId);
