@@ -12,6 +12,7 @@ import "./App.css";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import ThemeProvider from "./utils/themeContext";
 
 // const httpLink = createHttpLink({
 //   uri: "/graphql",
@@ -21,13 +22,13 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <>
+    <ThemeProvider>
       <Header />
       <main>
         <Outlet />
       </main>
       <Footer />
-    </>
+    </ThemeProvider>
   );
 }
 
