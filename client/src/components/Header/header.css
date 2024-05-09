@@ -1,7 +1,7 @@
 @import url("../../index.css");
 
 .navbar {
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   left: 0;
   width: 100%;
@@ -13,4 +13,14 @@
 
 .navbar-expand {
   justify-content: center;
+}
+
+.offcanvas-header {
+  background-color: var(--brown-8);
+  color: var(--brown-3);
+}
+
+.offcanvas-body {
+  background-color: var(--brown-7);
+  color: var(--brown-2);
 }
