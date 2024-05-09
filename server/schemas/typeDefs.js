@@ -28,6 +28,7 @@ type User {
     email: String!
     password: String!
     artistData: Artist
+    is_artist: Boolean
     favorite_artists: [Artist]
     events: [Event]
 }

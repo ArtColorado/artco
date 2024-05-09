@@ -68,12 +68,13 @@ const resolvers = {
     removeArtwork: async (parent, { artworkId }) => {
       return Artwork.findOneandDelete({ _id: artworkId });
     },
-    createArtist: async (parent, { bio }, context) => {
+    createArtist: async (parent, { bio, }, context) => {
       if (context.user) {
         return User.findOneandUpdate(
           { _id: context.user._id},
           {
             $addToSet: { artistData: {bio: bio} },
+            is_artist: true,
           },
 
           { new: true, runValidators: true }

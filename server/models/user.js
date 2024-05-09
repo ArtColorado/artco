@@ -25,6 +25,11 @@ const userSchema = new Schema(
       minlength: 8,
     },
     artistData: Artist,
+    is_artist: {
+      type: Boolean,
+      default: false,
+    },
+
     favorite_artists: [Artist],
     events: [
       {
