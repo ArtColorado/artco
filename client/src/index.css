@@ -19,7 +19,6 @@
   --brown-9: #110c08;
   color-scheme: light dark;
   color: var(--brown-0);
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -78,18 +77,26 @@ button:focus-visible {
   margin: 30px 0px 30px 0px;
 }
 
-#calendar-icon {
-  font-size: 24px;
+@media (min-width: 768px) {
+  .site-width {
+    width: 80%;
+  }
+  label {
+    width: 20%;
+  }
+  input {
+    width: 79%;
+  }
 }
-@media (prefers-color-scheme: light) {
-  :root {
-    color: var(--brown-9);
-    background-color: var(--brown-0);
+
+@media (min-width: 992px) {
+  .site-width {
+    width: 70%;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: var(--brown-2);
+}
+
+@media (min-width: 1200px) {
+  .site-width {
+    width: 60%;
   }
 }
