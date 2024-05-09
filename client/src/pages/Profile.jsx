@@ -47,19 +47,19 @@ const Profile = () => {
       <Row id="gallery">
         <Col>
           <Image
-            src="https://cdn.thecollector.com/wp-content/uploads/2022/09/the-bus-frida-kahlo-1929.jpg?width=1080&quality=55"
+            src="/images/images-artwork/Elizabeth_Zimmerman_Baby_Surprise_Jacket.jpg"
             fluid
           />
         </Col>
         <Col>
           <Image
-            src="https://cdn.thecollector.com/wp-content/uploads/2022/09/frida-kahlo-self-portrait-in-a-velvet-dress-1926.jpg?width=1080&quality=55"
+            src="/images/images-artwork/Elizabeth_Zimmerman_Contrast_Cardigan.jpg"
             fluid
           />
         </Col>
         <Col>
           <Image
-            src="https://cdn.thecollector.com/wp-content/uploads/2022/09/frida-kahlo-self-portrait-time-flies-1929.jpg?width=1080&quality=55"
+            src="/images/images-artwork/Elizabeth_Zimmerman_Knitting_Around.jpg"
             fluid
           />
         </Col>
