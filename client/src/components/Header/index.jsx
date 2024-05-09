@@ -1,5 +1,7 @@
 import "./header.css";
-
+import { useReducer } from "react";
+import { useTheme } from "../../utils/themeContext";
+import { TOGGLE_THEME } from "../../utils/actions";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import {
@@ -16,18 +18,28 @@ import Auth from "../../utils/auth";
 const Header = () => {
   const [show, setShow] = useState(false);
 
+  const [ state, dispatch ] = useTheme();
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   return (
     <Navbar sticky="top">
-      <Container>
-        <Col></Col>
+      <Container className="nav-elements">
+        <Button
+          id="toggle-button"
+          onClick={() =>
+            dispatch({ type: TOGGLE_THEME, payload: state.darkTheme })
+          }
+          className="toggle-button"
+          type="button"
+        >
+        <img src="/images/icons/sun.png" alt="sun icon" id="sun-icon"/>
+        </Button>
         <Col md="auto">
           <h1 className="text-center">artCO</h1>
         </Col>
-        <Col></Col>
-        <Button variant="success" onClick={handleShow}>
+
+        <Button id="navbar-toggle" onClick={handleShow}>
           <span className="navbar-toggler-icon"></span>
         </Button>
         <Offcanvas show={show} onHide={handleClose} placement="end">
