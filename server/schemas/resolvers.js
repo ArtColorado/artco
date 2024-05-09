@@ -1,4 +1,4 @@
-const { User, Artwork } = require("../models");
+const { User, Artwork, Event } = require("../models");
 const { signToken, AuthenticationError } = require("../utils/auth");
 
 const resolvers = {
@@ -11,8 +11,14 @@ const resolvers = {
       return User.findOne({ _id: userId });
     },
 
-    artwork: async (parent, {artworkId}) => {
-      return Artwork.findOne({_id: artworkId})
+    artwork: async (parent, { artworkId }) => {
+      return Artwork.findOne({ _id: artworkId });
+    },
+    events: async () => {
+      return Event.find();
+    },
+    event: async (parent, { eventId }) => {
+      return Event.findOne({ _id: eventId });
     },
   },
 
@@ -40,45 +46,60 @@ const resolvers = {
       return { token, user };
     },
 
-    addArtwork: async (parent, { title, imageURL, stock, description, }, context) => {
-      if (context.user)
-      {return Artwork.create({ title, imageURL, stock, description });}
+    addArtwork: async (
+      parent,
+      { title, imageURL, stock, description },
+      context
+    ) => {
+      if (context.user) {
+        return Artwork.create({ title, imageURL, stock, description });
+      }
     },
 
-    updateArtwork: async (parent, { title, imageURL, stock, description }, context) => {
-      if (context.user)
-      {return Artwork.findOneandUpdate(
-        { _id: _id },
-        {
-          $addToSet: {
-            titel: title,
-            imageURL: imageURL,
-            stock: stock,
-            description: description,
+    updateArtwork: async (
+      parent,
+      { title, imageURL, stock, description },
+      context
+    ) => {
+      if (context.user) {
+        return Artwork.findOneandUpdate(
+          { _id: _id },
+          {
+            $addToSet: {
+              titel: title,
+              imageURL: imageURL,
+              stock: stock,
+              description: description,
+            },
           },
-        },
-        {
-          new: true,
-          runValidators: true,
-        },
-      );
-    }
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
+      }
     },
 
     removeArtwork: async (parent, { artworkId }) => {
       return Artwork.findOneandDelete({ _id: artworkId });
     },
-    createArtist: async (parent, { bio, }, context) => {
+    createArtist: async (parent, { name, bio }, context) => {
       if (context.user) {
         return User.findOneandUpdate(
-          { _id: context.user._id},
+          { _id: context.user._id },
           {
-            $addToSet: { artistData: {bio: bio} },
+            $addToSet: { artistData: { bio: bio, name: name } },
             is_artist: true,
           },
 
           { new: true, runValidators: true }
         );
+      }
+    },
+
+    addEvent: async (parent, { name, location, date }, context) => {
+      if (context.user) {
+        return Event.create({ name, location, date });
       }
     },
   },

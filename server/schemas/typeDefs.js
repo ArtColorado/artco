@@ -12,6 +12,7 @@ type Artist {
     bio: String!
     events: [Event]
     artWorks: [Artwork]
+    name: String!
 }
 
 type Event {
@@ -42,6 +43,8 @@ type Query {
     users: [User]!
     user(userId: ID!): User
     artwork(artworkId: ID!): Artwork
+    events: [Event]!
+    event(eventId: ID!): Event
 
 }
 
@@ -52,6 +55,7 @@ type Mutation {
    updateArtwork(title: String!, imageURL: String!, stock: Int!, description: String!): Artwork
    removeArtwork: Artwork
    createArtist(bio: String!): User
+   addEvent(name: String!, location: String!, date: String!): Event
 }
 
 `;
