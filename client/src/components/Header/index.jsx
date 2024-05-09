@@ -54,6 +54,9 @@ const Header = () => {
                 <Nav.Link href="/">Home</Nav.Link>
               </Nav.Item>
               <Nav.Item>
+                <Nav.Link href="/categories">Category</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
                 <Nav.Link href="/event">Events</Nav.Link>
               </Nav.Item>
               <Nav.Item>
