@@ -33,3 +33,12 @@ export const LOGIN_USER = gql`
     }
   }
 `;
+
+export const ADD_EVENT = gql`
+mutation Mutation($name: String!, $location: String!, $date: String!) {
+  addEvent(name: $name, location: $location, date: $date) {
+    date
+    location
+    name
+  }
+}`

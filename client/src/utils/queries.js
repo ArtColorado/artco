@@ -51,3 +51,27 @@ export const QUERY_ARTWORK = gql`
     }
   }
 `;
+
+export const QUERY_EVENT = gql `
+query Event($eventId: ID!) {
+  event(eventId: $eventId) {
+    artists {
+      name
+    }
+    date
+    location
+    name
+  }
+}`
+
+export const QUERY_EVENTS = gql `
+query Events {
+  events {
+    artists {
+      name
+    }
+    date
+    location
+    name
+  }
+}`
