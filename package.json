@@ -14,8 +14,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^8.2.0",
-    "cloudinary": "^2.2.0"
+    "@cloudinary/react": "^1.13.0",
+    "@cloudinary/url-gen": "^1.19.0",
+    "cloudinary": "^2.2.0",
+    "dotenv": "^8.2.0"
   },
   "devDependencies": {
     "concurrently": "^8.2.0"

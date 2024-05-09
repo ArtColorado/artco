@@ -1,5 +1,6 @@
 import { Col, Container, Row, Image, Button } from "react-bootstrap";
 import Auth from "../utils/auth";
+import Cloudinary from "./Upload";
 
 import Artist from "./Artist";
 
@@ -70,7 +71,7 @@ const Profile = () => {
       <Row className="justify-content-center">
         <Col xs lg="2"></Col>
         <Col md="auto">
-          <Button variant="success">Add Image</Button>{" "}
+          <Cloudinary />
         </Col>
         <Col xs lg="2"></Col>
       </Row>
