@@ -10,14 +10,19 @@ import "./login.css";
 export default function login(props) {
   const [state, dispatch] = useTheme();
 
-  const themeStyles = {
+  const themeStyles1 = {
     background: state.darkTheme ? "var(--brown-9)" : "var(--brown-0)",
     color: state.darkTheme ? "var(--brown-0)" : "var(--brown-9)",
   };
 
+  const themeStyle2 = {
+    borderColor: state.darkTheme ? "white" : "var(--brown-5)",
+    boxShadow: state.darkTheme ? "gray" : "2px 2px 5px var(--brown-2)",
+  }
+
   return (
-    <div className="site-width mx-auto" style={themeStyles}>
-    <Container style={themeStyles}>
+    <div className="site-width mx-auto" style={themeStyles1}>
+    <Container style={themeStyles1}>
       <Row className="justify-content-center">
         <Col md="auto">
           <h2>
@@ -26,7 +31,7 @@ export default function login(props) {
         </Col>
       </Row>
     </Container>
-    <Container className="whole-form">
+    <Container className="whole-form" style={themeStyle2}>
       <Form className="login-form" id="login-form">
         <Form.Group>
           <Form.Label>Email Address</Form.Label>
