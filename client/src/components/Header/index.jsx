@@ -2,11 +2,14 @@ import "./header.css";
 
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import Button from "react-bootstrap/Button";
-import Offcanvas from "react-bootstrap/Offcanvas";
+import {
+  Container,
+  Nav,
+  Navbar,
+  Button,
+  Offcanvas,
+  Col,
+} from "react-bootstrap";
 
 import Auth from "../../utils/auth";
 
@@ -19,7 +22,11 @@ const Header = () => {
   return (
     <Navbar sticky="top">
       <Container>
-        <h1 className="text-center">artCO</h1>
+        <Col></Col>
+        <Col md="auto">
+          <h1 className="text-center">artCO</h1>
+        </Col>
+        <Col></Col>
         <Button variant="success" onClick={handleShow}>
           <span className="navbar-toggler-icon"></span>
         </Button>

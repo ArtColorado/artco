@@ -4,7 +4,6 @@ import Cloudinary from "./Upload";
 
 import Artist from "./Artist";
 
-// Frida Kahlo is being used here as an example for layout building
 const Profile = () => {
   return (
     <Container>
@@ -17,10 +16,7 @@ const Profile = () => {
       </Row>
       <Row id="user">
         <Col xs lg="2" id="userImage">
-          <Image
-            src="https://i.natgeofe.com/n/128c169c-2fbe-4a53-b48c-ec92d1357660/05-frida-kahlo-difficult-women_square.jpg"
-            fluid
-          />
+          <Image src="/images/images-artists/Elizabeth_Zimmermann.jpg" fluid />
         </Col>
         <Col id="userBio">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis
