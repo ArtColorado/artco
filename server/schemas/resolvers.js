@@ -52,7 +52,7 @@ const resolvers = {
       { title, imageURL, stock, description },
       context
     ) => {
-      if (context.user) {
+      if (!context.user) {
         throw AuthenticationError;
       }
       return Artwork.create({ title, imageURL, stock, description });
@@ -63,7 +63,7 @@ const resolvers = {
       { title, imageURL, stock, description },
       context
     ) => {
-      if (context.user) {
+      if (!context.user) {
         throw AuthenticationError;
       }
       return Artwork.findOneandUpdate(
