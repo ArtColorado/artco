@@ -22,6 +22,14 @@
   text-rendering: optimizeLegibility;
 }
 
+.darkmode {
+  background-color: var(--brown-8);
+}
+
+.lightmode {
+  background-color: var(--brown-0);
+}
+
 #root {
   width: 100%;
 }
@@ -75,6 +83,12 @@ button:focus-visible {
 
 #category-icon {
   margin: 10px 0px 10px 0px;
+}
+
+
+.site-width {
+  width: 90%;
+  --bs-gutter-x: 0;
 }
 
 #artwork-category {

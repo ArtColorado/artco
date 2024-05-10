@@ -8,61 +8,66 @@ import {
   Card,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useReducer } from "react";
+import { useTheme } from "../utils/themeContext";
+import { border } from "@cloudinary/url-gen/qualifiers/background";
+import "./home.css";
 import React from "react";
 
 const Home = () => {
+  const [state, dispatch] = useTheme();
+
+  const themeStyles1 = {
+    color: state.darkTheme ? "var(--brown-0)" : "var(--brown-9)",
+  };
+
+  const themeStyles2 = {
+    background: state.darkTheme ? "var(--brown-6)" : "white",
+    borderColor: state.darkTheme ? "var(--brown-6)" : "white",
+    boxShadow: state.darkTheme
+      ? "2px 2px 5px var(--brown-9)"
+      : "2px 2px 5px var(--brown-2)",
+  };
+
   return (
-    <Container>
-      <Row>
-        <Col></Col>
-        <Col md="auto">
-          <h1>Welcome to artCo!</h1>
-        </Col>
-        <Col></Col>
+    <Container className="site-width" style={themeStyles1}>
+      <Row className="text-center" id="home-page-intro">
+        <h1>Welcome to artCo!</h1>
+      </Row>
+      <Row className="text-center">
+        <h4>
+          Find out where your favorite local artists/artisans will be, or
+          discover a new favorite!
+        </h4>
       </Row>
       <Row>
-        <Col></Col>
-        <Col md="auto">
-          <h4>
-            Find out where your favorite local artists/artisans will be, or
-            discover a new favorite!
-          </h4>
-        </Col>
-        <Col></Col>
-      </Row>
-      <Row>
-        <Col></Col>
-        <Col md="auto">
-          <h6>
-            Check out our upcoming events!{" "}
-            <Link to="/event">
-              <i className="fa">&#xf073;</i>
-            </Link>
-          </h6>
-        </Col>
-        <Col></Col>
+        <h5>
+          Check out our upcoming events!{" "}
+          <Link to="/event">
+            <i className="fa">&#xf073;</i>
+          </Link>
+        </h5>
       </Row>
       <Row id="search-bar-label">
-        <Col></Col>
         <Col md="auto">
-          <h6>Search for an artist by name</h6>
-        </Col>
-        <Col></Col>
-      </Row>
-      <Row id="search-bar">
-        <Col>
-          <Form.Control type="text" placeholder="Artist Name"></Form.Control>{" "}
-        </Col>
-        <Col>
-          <Button variant="success" as="input" type="submit" value="Submit" />
+          <h5>Search for an artist by name:</h5>
         </Col>
       </Row>
-      <Row>
-        <Col></Col>
+
+      <Row id="search-bar" className="p-2">
+        <Form.Control type="text" id="search-input" className="flex-fill"></Form.Control>{" "}
+        <Button
+          variant="success"
+          as="input"
+          type="submit"
+          value="Submit"
+          id="search-button"
+        />
+      </Row>
+      <Row className="mt-3 mb-2">
         <Col md="auto">
-          <h6>Or explore our artists by category!</h6>
+          <h4>Or explore our artists by category!</h4>
         </Col>
-        <Col></Col>
       </Row>
       <Row>
         <Col id="category-icon" xs={12} md={6} lg={4}>
@@ -179,8 +184,8 @@ const Home = () => {
             </Card>
           </Link>
         </Col>
+        <Col className="my-4"></Col>
       </Row>
-      <Row></Row>
     </Container>
   );
 };
