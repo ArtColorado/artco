@@ -1,13 +1,14 @@
-import { useState } from "react";
 import React from "react";
-import { useMutation } from "@apollo/client";
-import { LOGIN_USER } from "../utils/mutations";
-import { Container, Form, Col, Row, Button } from "react-bootstrap";
-import AuthService from "../utils/auth";
 import { useReducer } from "react";
+import { useState } from "react";
+import { useMutation } from "@apollo/client";
+import { LOGIN_USER, ADD_USER } from "../utils/mutations";
+import { Container, Form, Col, Row, Button } from "react-bootstrap";
+import { background } from "@cloudinary/url-gen/qualifiers/focusOn";
+
+import AuthService from "../utils/auth";
 import { useTheme } from "../utils/themeContext";
 import "./login.css";
-import { background } from "@cloudinary/url-gen/qualifiers/focusOn";
 
 export default function login(props) {
   const [state, dispatch] = useTheme();
@@ -30,6 +31,36 @@ export default function login(props) {
     color: state.darkTheme ? "var(--brown-0)" : "var(--brown-9)",
   };
 
+  const [formState, setFormState] = useState({ email: "", password: "" });
+  const [login, { error, data }] = useMutation(LOGIN_USER);
+
+  const handleLoginChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
+  const handleLoginFormSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const { data } = await login({
+        variables: { ...formState },
+      });
+
+      AuthService.login(data.login.token);
+    } catch (err) {
+      console.error(err);
+    }
+
+    setFormState({
+      email: "",
+      password: "",
+    });
+  };
+
   return (
     <div className="site-width mx-auto" style={themeStyles1}>
       <Container style={themeStyles1}>
@@ -42,14 +73,20 @@ export default function login(props) {
         </Row>
       </Container>
       <Container className="whole-form" style={themeStyle2}>
-        <Form className="login-form" id="login-form">
+        <Form
+          className="login-form"
+          id="login-form"
+          onSubmit={handleLoginFormSubmit}
+        >
           <Form.Group className="form-group">
             <Form.Label className="form-label">Email Address:</Form.Label>
             <Form.Control
               className="form-input"
               type="text"
               id="email-login"
+              value={formState.email}
               placeholder="name@example.com"
+              onChange={handleLoginChange}
             />
           </Form.Group>
           <Form.Group className="form-group">
@@ -58,7 +95,9 @@ export default function login(props) {
               className="form-input"
               type="password"
               id="password-login"
+              value={formState.password}
               placeholder="password"
+              onChange={handleLoginChange}
             />
           </Form.Group>
           {/* This button should check the user database for the user and validate their login appropriately */}
@@ -73,6 +112,9 @@ export default function login(props) {
             </Button>{" "}
           </Form.Group>
         </Form>
+        {error && (
+          <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
+        )}
         <Container className="d-flex justify-content-center my-2">
           <h4>~ OR ~</h4>
         </Container>
