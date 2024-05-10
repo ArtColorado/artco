@@ -1,0 +1,22 @@
+@import url("../index.css");
+
+.form-control {
+  flex-grow: 1;
+}
+
+.form-input {
+  background-color: white;
+  width: 100%;
+  border-radius: 5px;
+  color: var(--brown-9);
+}
+
+#event-description {
+  border: 0;
+  border-radius: 5px;
+  height: 10rem;
+}
+
+.react-daterange-picker__wrapper {
+  border: 0;
+}
