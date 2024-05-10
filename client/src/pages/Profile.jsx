@@ -2,21 +2,26 @@ import { Col, Container, Row, Image } from "react-bootstrap";
 import AuthService from "../utils/auth";
 import Cloudinary from "./Upload";
 import { Link } from "react-router-dom";
+import { useTheme } from "../utils/themeContext";
 import "./profile.css";
 
-import Artist from "./Artist";
-
 const Profile = () => {
+  const [state, dispatch] = useTheme();
+
+  const themeStyles1 = {
+    color: state.darkTheme ? "var(--brown-0)" : "var(--brown-9)",
+  };
+
   return (
-    <Container className="site-width">
+    <Container className="site-width" style={themeStyles1}>
       <Row id="username" className="justify-content-center">
-        {/* Pull in artist's name */}
+        {/* Pull in user's name */}
         <Col md="auto" className="text-center">
           <h1>User/Artist Name</h1>
         </Col>
       </Row>
       <Row id="user">
-        {/* Pull in artist's avatar/image */}
+        {/* Pull in user's avatar/image */}
         <Col xs id="userImage">
           <Image
             src="/images/images-artists/Elizabeth_Zimmermann.jpg"
