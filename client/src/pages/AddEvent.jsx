@@ -106,3 +106,5 @@ export default function AddEvent(props) {
     </div>
   );
 }
+
+// NOTE: when we are getting the information off of our form, we will need to use the new "eventDate" state that is created when a user interacts with the date-range-picker. I set up a console log of the eventDate to see what, exactly, we are getting from that state, if you need it.
