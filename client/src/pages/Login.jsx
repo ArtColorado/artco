@@ -1,9 +1,9 @@
 import { useState } from "react";
-import React from 'react';
+import React from "react";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
 import { Container, Form, Col, Row, Button } from "react-bootstrap";
-import Auth from "../utils/auth";
+import AuthService from "../utils/auth";
 import { useReducer } from "react";
 import { useTheme } from "../utils/themeContext";
 import "./login.css";
@@ -73,7 +73,7 @@ export default function login(props) {
           </Form.Group>
         </Form>
         <Container className="d-flex justify-content-center my-2">
-              <h4>~ OR ~</h4>
+          <h4>~ OR ~</h4>
         </Container>
         <Form className="signup-form" id="signup-form">
           <Form.Group className="form-group">
