@@ -61,6 +61,7 @@ export default function login(props) {
               placeholder="password"
             />
           </Form.Group>
+          {/* This button should check the user database for the user and validate their login appropriately */}
           <Form.Group className="form-button mt-3">
             <Button
               variant="secondary"
@@ -124,6 +125,7 @@ export default function login(props) {
               className="mt-1"
             />
           </Form.Group>
+          {/* This button should add the user to the user database */}
           <Form.Group className="form-button mt-3">
             <Button
               variant="secondary"

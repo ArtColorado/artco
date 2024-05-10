@@ -1,22 +1,39 @@
 import { Container, Col, Row, Image, Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useTheme } from "../utils/themeContext";
 
 const Event = () => {
+  const [state, dispatch] = useTheme();
+
+  const themeStyles1 = {
+    color: state.darkTheme ? "var(--brown-0)" : "var(--brown-9)",
+  };
+
+  const themeStyles2 = {
+    background: state.darkTheme ? "var(--brown-3)" : "white",
+    borderColor: state.darkTheme ? "var(--brown-3)" : "white",
+    boxShadow: state.darkTheme
+      ? "2px 2px 5px var(--brown-9)"
+      : "2px 2px 5px var(--brown-2)",
+  };
+
   return (
-    <Container>
+    <Container style={themeStyles1}>
       <Row>
-        <Col></Col>
-        <Col md="auto">
+        {/* Pull in event name */}
+        <Col className="text-center">
           <h1>Event Name</h1>
         </Col>
-        <Col></Col>
       </Row>
       <Row>
+        {/* Pull in event image. May need a default if image is not required and user does not add an image */}
         <Col xs="4" lg="3">
           <Image src="images/images-events/Mile_High_Flea_Market.jpg" fluid />
         </Col>
         <Col>
+          {/* Pull in date, time, and location */}
           <h3>Event Date, Time, and Location</h3>
+          {/* Pull in description */}
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
             distinctio rem eaque tempora porro quasi at esse nemo? Error nihil
@@ -39,16 +56,17 @@ const Event = () => {
           <h1>ATTENDING ARTISTS:</h1>
         </Col>
         <Col lg="2">
-          {/* This will only populate if an artist is signed in */}
+          {/* This button will only populate if an artist is signed in */}
           <Button variant="success" type="button">
             Attending this event
           </Button>
         </Col>
       </Row>
       <Row>
+        {/* This should populate all columns with cards for all the artists attending the event */}
         <Col id="event-artist" xs={12} md={4} lg={3}>
           <Link to="#">
-            <Card>
+            <Card className="mb-3" style={themeStyles2}>
               <Card.Img
                 variant="top"
                 src="images/images-artists/Andy_Warhol.jpg"
@@ -61,7 +79,7 @@ const Event = () => {
         </Col>
         <Col id="event-artist" xs={12} md={4} lg={3}>
           <Link to="#">
-            <Card>
+            <Card className="mb-3" style={themeStyles2}>
               <Card.Img
                 variant="top"
                 src="images/images-artists/Claude_Monet.jpg"
@@ -74,7 +92,7 @@ const Event = () => {
         </Col>
         <Col id="event-artist" xs={12} md={4} lg={3}>
           <Link to="#">
-            <Card>
+            <Card className="mb-3" style={themeStyles2}>
               <Card.Img
                 variant="top"
                 src="images/images-artists/Georgia_OKeeffe.jpg"
@@ -87,7 +105,7 @@ const Event = () => {
         </Col>
         <Col id="event-artist" xs={12} md={4} lg={3}>
           <Link to="#">
-            <Card>
+            <Card className="mb-3" style={themeStyles2}>
               <Card.Img
                 variant="top"
                 src="images/images-artists/Katherine_Choy.jpg"
@@ -100,7 +118,7 @@ const Event = () => {
         </Col>
         <Col id="event-artist" xs={12} md={4} lg={3}>
           <Link to="#">
-            <Card>
+            <Card className="mb-3" style={themeStyles2}>
               <Card.Img
                 variant="top"
                 src="images/images-artists/Gustav_Stickley.jpg"
@@ -113,7 +131,7 @@ const Event = () => {
         </Col>
         <Col id="event-artist" xs={12} md={4} lg={3}>
           <Link to="#">
-            <Card>
+            <Card className="mb-3" style={themeStyles2}>
               <Card.Img
                 variant="top"
                 src="images/images-artists/Dorothea_Lange.jpg"

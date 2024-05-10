@@ -32,7 +32,7 @@ const Home = () => {
   return (
     <Container className="site-width" style={themeStyles1}>
       <Row className="text-center" id="home-page-intro">
-        <h1>Welcome to artCo!</h1>
+        <h1>Welcome to artCO!</h1>
       </Row>
       <Row className="text-center">
         <h4>
@@ -43,7 +43,7 @@ const Home = () => {
       <Row>
         <h5>
           Check out our upcoming events!{" "}
-          <Link to="/event">
+          <Link to="/eventlist">
             <i className="fa">&#xf073;</i>
           </Link>
         </h5>
@@ -55,7 +55,11 @@ const Home = () => {
       </Row>
 
       <Row id="search-bar" className="p-2">
-        <Form.Control type="text" id="search-input" className="flex-fill"></Form.Control>{" "}
+        <Form.Control
+          type="text"
+          id="search-input"
+          className="flex-fill"
+        ></Form.Control>{" "}
         <Button
           variant="success"
           as="input"

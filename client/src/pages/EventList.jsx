@@ -8,12 +8,27 @@ import {
   Stack,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useTheme } from "../utils/themeContext";
 
 import Event from "./Event";
 
 const EventList = () => {
+  const [state, dispatch] = useTheme();
+
+  const themeStyles1 = {
+    color: state.darkTheme ? "var(--brown-0)" : "var(--brown-9)",
+  };
+
+  const themeStyles2 = {
+    background: state.darkTheme ? "var(--brown-3)" : "white",
+    borderColor: state.darkTheme ? "var(--brown-3)" : "white",
+    boxShadow: state.darkTheme
+      ? "2px 2px 5px var(--brown-9)"
+      : "2px 2px 5px var(--brown-2)",
+  };
+
   return (
-    <Container>
+    <Container style={themeStyles1}>
       <Row>
         <Col>
           <h1>Event List</h1>
@@ -21,8 +36,8 @@ const EventList = () => {
       </Row>
       <Row>
         <Stack>
-          {/* Implement a .map to autofill the cards into the stack */}
-          <Card className="mt-3">
+          {/* Implement a .map to autofill the cards into the stack and possibly sort by events that are coming up*/}
+          <Card className="mt-3" style={themeStyles2}>
             <Card.Header as="h5">Featured</Card.Header>
             <Card.Body>
               <Card.Title>Special title treatment</Card.Title>
@@ -35,7 +50,7 @@ const EventList = () => {
               </Link>
             </Card.Body>
           </Card>
-          <Card className="mt-3">
+          <Card className="mt-3" style={themeStyles2}>
             <Card.Header as="h5">Featured</Card.Header>
             <Card.Body>
               <Card.Title>Special title treatment</Card.Title>
@@ -48,7 +63,7 @@ const EventList = () => {
               </Link>
             </Card.Body>
           </Card>
-          <Card className="mt-3">
+          <Card className="mt-3" style={themeStyles2}>
             <Card.Header as="h5">Featured</Card.Header>
             <Card.Body>
               <Card.Title>Special title treatment</Card.Title>
@@ -64,6 +79,7 @@ const EventList = () => {
         </Stack>
       </Row>
       <Row>
+        {/* This button should only populate when a user is logged in */}
         <Col className="text-center">
           <Link to="/addevent">
             <Button variant="success" type="input">

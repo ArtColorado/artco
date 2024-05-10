@@ -5,6 +5,7 @@ const Categories = () => {
   return (
     <Container>
       <Row>
+        {/* This select box should default to 'Choose a category' when navigated to through the navbar, otherwise it should populate with the correct category if navigated here by clicking on a category from the Home page */}
         <Form.Select size="lg">
           <option>Choose a category</option>
           <option value="1">Jewelry</option>
@@ -16,6 +17,7 @@ const Categories = () => {
         </Form.Select>
       </Row>
       <Row>
+        {/* This row should populate with any art that is associated with the selected category */}
         <Col id="artwork-category" xs={12} md={4} lg={3}>
           <Link to="#">
             <Image
