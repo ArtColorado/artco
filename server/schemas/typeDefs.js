@@ -28,7 +28,7 @@ type User {
     address: String
     email: String!
     artistData: Artist
-    is_artist: Boolean
+    is_artist: String!
     favorite_artists: [User]
     events: [Event]
 }
@@ -48,7 +48,7 @@ type Query {
 }
 
 type Mutation {
-    addUser(username: String!, email: String!, password: String!, address: String): Auth
+    addUser(username: String!, email: String!, password: String!, is_artist: String!): Auth
     login(email: String!, password: String!): Auth
    addArtwork( title: String!, imageURL: String, stock: Int!, description: String!, category: String): User
    updateArtwork(title: String!, imageURL: String!, stock: Int!, description: String!): Artwork
