@@ -19,7 +19,7 @@ type Event {
     name: String!
     location: String!
     date: String!
-    artists: [Artist]
+    artists: [User]
 }
 
 type User {
@@ -27,10 +27,9 @@ type User {
     username: String!
     address: String
     email: String!
-    password: String!
     artistData: Artist
     is_artist: Boolean
-    favorite_artists: [Artist]
+    favorite_artists: [User]
     events: [Event]
 }
 
@@ -54,8 +53,9 @@ type Mutation {
    addArtwork( title: String!, imageURL: String!, stock: Int!, description: String!): Artwork
    updateArtwork(title: String!, imageURL: String!, stock: Int!, description: String!): Artwork
    removeArtwork: Artwork
-   createArtist(bio: String!): User
+   createArtist(bio: String!, name: String!): User
    addEvent(name: String!, location: String!, date: String!): Event
+   addArtisttoEvent(userId: ID, eventId: ID!): Event
 }
 
 `;

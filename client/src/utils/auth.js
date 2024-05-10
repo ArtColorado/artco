@@ -1,5 +1,9 @@
 import decode from "jwt-decode";
 
-class AuthService {}
+class AuthService {
+  login(token) {
+    localStorage.setItem("authToken", token);
+  }
+}
 
 export default new AuthService();
