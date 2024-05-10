@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { useMutation } from "@apollo/client";
-import { ADD_ARTWORK } from "../../utils/mutations";
+// import { ADD_ARTWORK } from "../../utils/mutations";
 
 // Create a context to manage the script loading state
 const CloudinaryScriptContext = createContext();
