@@ -30,20 +30,24 @@ const authLink = setContext((_, { headers }) => {
   };
 });
 
-const apolloClient = new ApolloClient({ cache: new InMemoryCache(), link: authLink.concat(httpLink) });
+const apolloClient = new ApolloClient({
+  cache: new InMemoryCache(),
+  link: authLink.concat(httpLink),
+});
 
 function App() {
   const [count, setCount] = useState(0);
 
-
   return (
-    <ThemeProvider>
-      <Header />
-      <main>
-        <Outlet />
-      </main>
-      <Footer />
-    </ThemeProvider>
+    <ApolloProvider client={apolloClient}>
+      <ThemeProvider>
+        <Header />
+        <main>
+          <Outlet />
+        </main>
+        <Footer />
+      </ThemeProvider>
+    </ApolloProvider>
   );
 }
 
