@@ -22,8 +22,8 @@ const Home = () => {
   };
 
   const themeStyles2 = {
-    background: state.darkTheme ? "var(--brown-6)" : "white",
-    borderColor: state.darkTheme ? "var(--brown-6)" : "white",
+    background: state.darkTheme ? "var(--brown-3)" : "white",
+    borderColor: state.darkTheme ? "var(--brown-3)" : "white",
     boxShadow: state.darkTheme
       ? "2px 2px 5px var(--brown-9)"
       : "2px 2px 5px var(--brown-2)",
@@ -72,15 +72,15 @@ const Home = () => {
       <Row>
         <Col id="category-icon" xs={12} md={6} lg={4}>
           <Link to="#">
-            <Card>
+            <Card style={themeStyles2}>
               <Card.Img src="/images/images-categories/jewelry.jpg" />
               <Card.ImgOverlay>
                 <Card.Title
                   style={{
                     fontSize: "36px",
                     color: "white",
-                    WebkitTextStroke: "1px black",
-                    textShadow: "1px 1px 4px #000",
+                    WebkitTextStroke: "1px var(--brown-9)",
+                    textShadow: "1px 1px 4px var(--brown-8)",
                   }}
                 >
                   Jewelry
@@ -91,15 +91,15 @@ const Home = () => {
         </Col>
         <Col id="category-icon" xs={12} md={6} lg={4}>
           <Link to="#">
-            <Card>
+            <Card style={themeStyles2}>
               <Card.Img src="/images/images-categories/painting.jpg" />
               <Card.ImgOverlay>
                 <Card.Title
                   style={{
                     fontSize: "36px",
                     color: "white",
-                    WebkitTextStroke: "1px black",
-                    textShadow: "1px 1px 4px #000",
+                    WebkitTextStroke: "1px var(--brown-9)",
+                    textShadow: "1px 1px 4px var(--brown-8)",
                   }}
                 >
                   Painting
@@ -110,15 +110,15 @@ const Home = () => {
         </Col>
         <Col id="category-icon" xs={12} md={6} lg={4}>
           <Link to="#">
-            <Card>
+            <Card style={themeStyles2}>
               <Card.Img src="/images/images-categories/photography.jpg" />
               <Card.ImgOverlay>
                 <Card.Title
                   style={{
                     fontSize: "36px",
                     color: "white",
-                    WebkitTextStroke: "1px black",
-                    textShadow: "1px 1px 4px #000",
+                    WebkitTextStroke: "1px var(--brown-9)",
+                    textShadow: "1px 1px 4px var(--brown-8)",
                   }}
                 >
                   Photography
@@ -129,15 +129,15 @@ const Home = () => {
         </Col>
         <Col id="category-icon" xs={12} md={6} lg={4}>
           <Link to="#">
-            <Card>
+            <Card style={themeStyles2}>
               <Card.Img src="/images/images-categories/pottery.jpg" />
               <Card.ImgOverlay>
                 <Card.Title
                   style={{
                     fontSize: "36px",
                     color: "white",
-                    WebkitTextStroke: "1px black",
-                    textShadow: "1px 1px 4px #000",
+                    WebkitTextStroke: "1px var(--brown-9)",
+                    textShadow: "1px 1px 4px var(--brown-8)",
                   }}
                 >
                   Pottery
@@ -148,15 +148,15 @@ const Home = () => {
         </Col>
         <Col id="category-icon" xs={12} md={6} lg={4}>
           <Link to="#">
-            <Card>
+            <Card style={themeStyles2}>
               <Card.Img src="/images/images-categories/textile.jpg" />
               <Card.ImgOverlay>
                 <Card.Title
                   style={{
                     fontSize: "36px",
                     color: "white",
-                    WebkitTextStroke: "1px black",
-                    textShadow: "1px 1px 4px #000",
+                    WebkitTextStroke: "1px var(--brown-9)",
+                    textShadow: "1px 1px 4px var(--brown-8)",
                   }}
                 >
                   Textile
@@ -167,15 +167,15 @@ const Home = () => {
         </Col>
         <Col id="category-icon" xs={12} md={6} lg={4}>
           <Link to="#">
-            <Card>
+            <Card style={themeStyles2}>
               <Card.Img src="/images/images-categories/woodworking.jpg" />
               <Card.ImgOverlay>
                 <Card.Title
                   style={{
                     fontSize: "36px",
                     color: "white",
-                    WebkitTextStroke: "1px black",
-                    textShadow: "1px 1px 4px #000",
+                    WebkitTextStroke: "1px var(--brown-9)",
+                    textShadow: "1px 1px 4px var(--brown-8)",
                   }}
                 >
                   Woodworking
