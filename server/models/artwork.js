@@ -20,7 +20,7 @@ const artWorkSchema = new Schema(
       maxLength: 500,
       description: "description can not be more than 500 characters",
     },
-    categorey: {
+    category: {
       type: String,
     },
   },

@@ -50,12 +50,13 @@ type Query {
 type Mutation {
     addUser(username: String!, email: String!, password: String!, is_artist: String!): Auth
     login(email: String!, password: String!): Auth
-   addArtwork( title: String!, imageURL: String, stock: Int!, description: String!, category: String): User
+   addArtwork( title: String!, imageURL: String, stock: Int!, description: String!, category: String): Artwork
    updateArtwork(title: String!, imageURL: String!, stock: Int!, description: String!): Artwork
    removeArtwork: Artwork
    createArtist(bio: String!, name: String!): User
    addEvent(name: String!, location: String!, date: String!): Event
    addArtisttoEvent(userId: ID, eventId: ID!): Event
+   creditArtistWithArtwork(artworkId: ID!): User
 }
 
 `;

@@ -25,12 +25,12 @@ class AuthService {
 
   login(idToken) {
     localStorage.setItem("id_token", idToken);
-    //what to put here so it doesn't reload page but instead updates state for necessary components
+    window.location.assign("/");
   }
 
   logout() {
     localStorage.removeItem("id_token");
-    //what to put here so it doesn't reload page but instead updates state for necessary components
+    window.location.assign("/");
   }
 }
 

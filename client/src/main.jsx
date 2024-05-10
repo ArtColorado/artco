@@ -14,6 +14,7 @@ import Artist from "./pages/Artist.jsx";
 import Event from "./pages/Event.jsx";
 import EventList from "./pages/EventList.jsx";
 import AddEvent from "./pages/AddEvent.jsx";
+import artWorkForm from "./components/ArtWorkForm/index.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
 
 const router = createBrowserRouter([
