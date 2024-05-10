@@ -1,16 +1,62 @@
 @import url("../../index.css");
 
 .navbar {
-  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: auto;
   background-color: var(--brown-9);
-  color: var(--brown-5);
+  color: var(--brown-1);
   /* padding: 10px; */
 }
 
 .navbar-expand {
   justify-content: center;
+}
+
+.offcanvas-header {
+  background-color: var(--brown-8);
+  color: var(--brown-0);
+}
+
+.offcanvas-body {
+  background-color: var(--brown-7);
+  color: var(--brown-0);
+}
+
+.toggle-button {
+  width: auto;
+  background-color: var(--brown-9);
+  border: none;
+}
+.toggle-button:hover {
+  background-color: var(--brown-8);
+}
+
+#sun-icon {
+  width: 40px;
+}
+
+#navbar-toggle {
+  width: 40px;
+  background-color: var(--brown-2);
+  border: none;
+  display: flex;
+  margin-right: 1rem;
+}
+#navbar-toggle:hover {
+  background-color: var(--brown-3);
+}
+
+.navbar-toggler-icon {
+  align-self: center;
+  color: var(--brown-9);
+}
+
+.btn-close {
+  background-color: var(--brown-0);
+}
+
+.nav-elements {
+  margin: 10px 0 10px 0;
 }

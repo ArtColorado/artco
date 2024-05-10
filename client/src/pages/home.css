@@ -1,0 +1,27 @@
+@import url("../index.css");
+
+#home-page-intro {
+  font-size: 12px;
+  text-align: center;
+}
+
+#search-input {
+  width: 70%;
+}
+
+#search-button {
+  width: 80px;
+  margin-left: 1rem;
+  background-color: var(--brown-5);
+  border: none;
+}
+
+#search-button:hover {
+  background-color: var(--brown-3);
+}
+
+@media (min-width: 768px) {
+  #home-page-intro {
+    font-size: 20px;
+  }
+}
