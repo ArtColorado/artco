@@ -1,5 +1,5 @@
 import { Col, Container, Row, Image } from "react-bootstrap";
-import Auth from "../utils/auth";
+import AuthService from "../utils/auth";
 import Cloudinary from "./Upload";
 import { Link } from "react-router-dom";
 import "./profile.css";
@@ -16,18 +16,25 @@ const Profile = () => {
       </Row>
       <Row id="user">
         <Col xs id="userImage">
-          <Image src="/images/images-artists/Elizabeth_Zimmermann.jpg" fluid className="float-start"/>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis
-          sunt excepturi odit dolor at. Facilis, odit. Enim aliquid dolorem
-          delectus soluta quisquam id mollitia omnis veniam quidem cumque aut,
-          repudiandae, dolor saepe provident nemo iste non dolores nobis est ad
-          explicabo quo. Odit, ab vero eaque incidunt necessitatibus ea quam
-          unde doloremque provident eveniet mollitia esse quo est inventore
-          soluta quaerat molestiae. Dicta accusamus qui, asperiores corrupti
-          iste placeat facilis, explicabo, nam provident officia vel laudantium
-          magnam eligendi est libero odio sint nemo tenetur beatae deleniti ipsa
-          porro? Nemo laudantium quisquam facilis maiores ea praesentium
-          doloremque modi quis laborum itaque.</p>
+          <Image
+            src="/images/images-artists/Elizabeth_Zimmermann.jpg"
+            fluid
+            className="float-start"
+          />
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Perferendis sunt excepturi odit dolor at. Facilis, odit. Enim
+            aliquid dolorem delectus soluta quisquam id mollitia omnis veniam
+            quidem cumque aut, repudiandae, dolor saepe provident nemo iste non
+            dolores nobis est ad explicabo quo. Odit, ab vero eaque incidunt
+            necessitatibus ea quam unde doloremque provident eveniet mollitia
+            esse quo est inventore soluta quaerat molestiae. Dicta accusamus
+            qui, asperiores corrupti iste placeat facilis, explicabo, nam
+            provident officia vel laudantium magnam eligendi est libero odio
+            sint nemo tenetur beatae deleniti ipsa porro? Nemo laudantium
+            quisquam facilis maiores ea praesentium doloremque modi quis laborum
+            itaque.
+          </p>
         </Col>
       </Row>
       <Row className="justify-content-center">
