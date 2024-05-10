@@ -13,7 +13,7 @@ import {
   Col,
 } from "react-bootstrap";
 
-import Auth from "../../utils/auth";
+import AuthService from "../../utils/auth";
 
 const Header = () => {
   const [show, setShow] = useState(false);
@@ -78,22 +78,22 @@ const Header = () => {
               <Nav.Item>
                 <Nav.Link href="/eventlist">Events</Nav.Link>
               </Nav.Item>
-              {/* {Auth.loggedIn() ? ( */}
-              {/* <> */}
-              <Nav.Item>
-                <Nav.Link href="/me">My Profile</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link href="#" id="logout">
-                  Logout
-                </Nav.Link>
-              </Nav.Item>
-              {/* </> */}
-              {/* ) : ( */}
-              <Nav.Item>
-                <Nav.Link href="/login">Login/Signup</Nav.Link>
-              </Nav.Item>
-              {/* )} */}
+              {AuthService.loggedIn() ? (
+                <>
+                  <Nav.Item>
+                    <Nav.Link href="/me">My Profile</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link href="#" id="logout">
+                      Logout
+                    </Nav.Link>
+                  </Nav.Item>
+                </>
+              ) : (
+                <Nav.Item>
+                  <Nav.Link href="/login">Login/Signup</Nav.Link>
+                </Nav.Item>
+              )}
             </Nav>
           </Offcanvas.Body>
         </Offcanvas>

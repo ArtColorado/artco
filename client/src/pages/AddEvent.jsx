@@ -15,12 +15,6 @@ import DateRangePicker from "@wojtekmaj/react-daterange-picker";
 
 export default function AddEvent(props) {
   const [state, dispatch] = useTheme();
-  //   const [eventDate, setEventDate] = useState("");
-
-  //   function handleChange(e) {
-  //     console.log(e.target.eventDate);
-  //     setEventDate(e.target.eventDate);
-  //   }
   const [eventDate, setEventDate] = useState();
   console.log(eventDate);
 
