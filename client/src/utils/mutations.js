@@ -60,3 +60,29 @@ export const ADD_ARTIST_TO_EVENT = gql`
     }
   }
 `;
+
+export const ADD_ARTWORK = gql`
+  mutation addArtwork(
+    $title: String!
+    $imageURL: String
+    $stock: Int!
+    $description: String!
+    $category: String
+  ) {
+    addArtwork(
+      title: $title
+      imageURL: $imageURL
+      stock: $stock
+      description: $description
+      category: $category
+    ) {
+      artwork {
+        title
+        imageURL
+        stock
+        description
+        category
+      }
+    }
+  }
+`;

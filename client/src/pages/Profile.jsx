@@ -88,7 +88,7 @@ const Profile = () => {
       {/* This button should only appear if this is the current user that is logged in */}
       <Row className="justify-content-center">
         <Col className="text-center mb-4">
-          <Cloudinary />
+          <Link to="/addArt">Add Artwork</Link>
         </Col>
       </Row>
     </Container>

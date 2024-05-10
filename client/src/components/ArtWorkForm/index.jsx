@@ -1,5 +1,6 @@
-import "./artworkform.css";
+// import "./artworkform.css";
 import { Link } from "react-router-dom";
+import Cloudinary from "../../pages/Upload";
 
 const artWorkForm = () => {
   const [title, setTitle] = useState("");
@@ -23,52 +24,56 @@ const artWorkForm = () => {
   //     }
   //   };
 
-  const handleCreateArtworkInfoFormSubmit = (e) => {
-    e.preventDefault();
-    //useMutation for creating artwork and then redirect to cloudinary to add image or hidden to visible
-
-    setTitle("");
-    setStock("");
-    setDescription("");
-    setCategorey("");
-  };
+  return (
+    <Container>
+      <Row>
+        <form onSubmit={handleCreateArtworkInfoFormSubmit} id="artworkInfo">
+          <input
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            type="text"
+            placeholder="title"
+          />
+          <input
+            value={stock}
+            onChange={(e) => setStock(e.target.value)}
+            type="number"
+            placeholder="stock"
+          />
+          <input
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            type="text"
+            placeholder="description"
+          />
+          <select
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+          >
+            <option>Jewelry</option>
+            <option>Painting</option>
+            <option>Photography</option>
+            <option>Pottery</option>
+            <option>Textile</option>
+            <option>Woodworking</option>
+          </select>
+          <Cloudinary
+            title={title}
+            stock={stock}
+            description={description}
+            category={category}
+          />
+          <Link to="/me">
+            {" "}
+            <button className="btn btn-lg" type="submit">
+              Add Artwork Information
+            </button>
+          </Link>
+        </form>
+      </Row>
+      <Row></Row>
+    </Container>
+  );
 };
 
-return (
-  <Container>
-    <Row>
-      <form onSubmit={handleCreateArtworkInfoFormSubmit}>
-        <input
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          type="text"
-          placeholder="title"
-        />
-        <input
-          value={stock}
-          onChange={(e) => setStock(e.target.value)}
-          type="number"
-          placeholder="stock"
-        />
-        <input
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          type="text"
-          placeholder="description"
-        />
-        <select value={category} onChange={(e) => setCategory(e.target.value)}>
-          <option>Jewelry</option>
-          <option>Painting</option>
-          <option>Photography</option>
-          <option>Pottery</option>
-          <option>Textile</option>
-          <option>Woodworking</option>
-        </select>
-
-        <button className="btn btn-lg" type="submit">
-          Add Artwork Information
-        </button>
-      </form>
-    </Row>
-  </Container>
-);
+export default artWorkForm;

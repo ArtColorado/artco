@@ -73,6 +73,8 @@ const resolvers = {
           },
         }
       );
+
+      return newArtwork;
     },
 
     updateArtwork: async (
