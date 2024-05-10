@@ -12,6 +12,8 @@ import Categories from "./pages/Categories.jsx";
 import Profile from "./pages/Profile.jsx";
 import Artist from "./pages/Artist.jsx";
 import Event from "./pages/Event.jsx";
+import EventList from "./pages/EventList.jsx";
+import AddEvent from "./pages/AddEvent.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
 
 const router = createBrowserRouter([
@@ -45,6 +47,14 @@ const router = createBrowserRouter([
       {
         path: "/event",
         element: <Event />,
+      },
+      {
+        path: "/eventlist",
+        element: <EventList />,
+      },
+      {
+        path: "/addevent",
+        element: <AddEvent />,
       },
     ],
   },
