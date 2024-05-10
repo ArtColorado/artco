@@ -12,6 +12,10 @@ const Artist = () => {
     color: state.darkTheme ? "var(--brown-0)" : "var(--brown-9)",
   };
 
+  const themeStyle2 = {
+    border: state.darkTheme ? "5px solid var(--brown-0)" : "5px solid var(--brown-9)",
+  };
+
   return (
     <Container className="site-width" style={themeStyles1}>
       <Row id="username" className="justify-content-center">
@@ -27,6 +31,7 @@ const Artist = () => {
             src="/images/images-artists/Elizabeth_Zimmermann.jpg"
             fluid
             className="float-start"
+            style={themeStyle2}
           />
           {/* Bio will be pulled in to populate this section */}
           <p>
@@ -85,6 +90,7 @@ const Artist = () => {
           />
         </Col>
       </Row>
+      <Row style={{ height: "30px" }}></Row>
     </Container>
   );
 };
