@@ -1,3 +1,4 @@
+const { Error } = require("mongoose");
 const { User, Artwork, Event } = require("../models");
 const { signToken, AuthenticationError } = require("../utils/auth");
 
@@ -51,9 +52,10 @@ const resolvers = {
       { title, imageURL, stock, description },
       context
     ) => {
-      if (context.user) {
-        return Artwork.create({ title, imageURL, stock, description });
+      if (!context.user) {
+        throw AuthenticationError;
       }
+      return Artwork.create({ title, imageURL, stock, description });
     },
 
     updateArtwork: async (
@@ -61,46 +63,59 @@ const resolvers = {
       { title, imageURL, stock, description },
       context
     ) => {
-      if (context.user) {
-        return Artwork.findOneandUpdate(
-          { _id: _id },
-          {
-            $addToSet: {
-              titel: title,
-              imageURL: imageURL,
-              stock: stock,
-              description: description,
-            },
-          },
-          {
-            new: true,
-            runValidators: true,
-          }
-        );
+      if (!context.user) {
+        throw AuthenticationError;
       }
+      return Artwork.findOneandUpdate(
+        { _id: _id },
+        {
+          $addToSet: {
+            titel: title,
+            imageURL: imageURL,
+            stock: stock,
+            description: description,
+          },
+        },
+        {
+          new: true,
+          runValidators: true,
+        }
+      );
     },
 
     removeArtwork: async (parent, { artworkId }) => {
       return Artwork.findOneandDelete({ _id: artworkId });
     },
     createArtist: async (parent, { name, bio }, context) => {
-      if (context.user) {
-        return User.findOneandUpdate(
-          { _id: context.user._id },
-          {
-            $addToSet: { artistData: { bio: bio, name: name } },
-            is_artist: true,
-          },
-
-          { new: true, runValidators: true }
-        );
+      if (!context.user) {
+        throw AuthenticationError;
       }
+      return User.findOneandUpdate(
+        { _id: context.user._id },
+        {
+          $addToSet: { artistData: { bio: bio, name: name } },
+          is_artist: true,
+        },
+
+        { new: true, runValidators: true }
+      );
     },
 
     addEvent: async (parent, { name, location, date }, context) => {
-      if (context.user) {
-        return Event.create({ name, location, date });
+      if (!context.user) {
+        throw AuthenticationError;
       }
+      return Event.create({ name, location, date });
+    },
+    addArtisttoEvent: async (parent, { artistData, eventId }) => {
+      if (context.user) {
+        throw AuthenticationError;
+      }
+      return Event.findOneandUpdate(
+        { _id: eventId },
+        { $addToSet: { artist: artistData } },
+        { new: true, runValidators: true }
+      );
     },
   },
 };

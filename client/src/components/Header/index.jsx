@@ -76,10 +76,7 @@ const Header = () => {
                 <Nav.Link href="/categories">Category</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link href="/event">Events</Nav.Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Nav.Link href="/artist">Artists</Nav.Link>
+                <Nav.Link href="/eventlist">Events</Nav.Link>
               </Nav.Item>
               {/* {Auth.loggedIn() ? ( */}
               {/* <> */}
