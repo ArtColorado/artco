@@ -49,13 +49,30 @@ const resolvers = {
 
     addArtwork: async (
       parent,
-      { title, imageURL, stock, description },
+      { title, imageURL, stock, description, category },
       context
     ) => {
       if (!context.user) {
         throw AuthenticationError;
       }
-      return Artwork.create({ title, imageURL, stock, description });
+      const newArtwork = await Artwork.create({
+        title,
+        imageURL,
+        stock,
+        description,
+        category,
+      });
+
+      const artworkId = newArtwork._id;
+
+      const creditArtist = await User.findOneAndUpdate(
+        { _id: context.user._id },
+        {
+          addToSet: {
+            artworkId,
+          },
+        }
+      );
     },
 
     updateArtwork: async (
