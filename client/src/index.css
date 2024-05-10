@@ -47,9 +47,6 @@ h1 {
   line-height: 1.1;
 }
 
-li {
-  list-style-type: circle;
-}
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -84,7 +81,6 @@ button:focus-visible {
 #category-icon {
   margin: 10px 0px 10px 0px;
 }
-
 
 .site-width {
   width: 90%;
