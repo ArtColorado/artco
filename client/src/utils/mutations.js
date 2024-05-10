@@ -60,3 +60,14 @@ export const ADD_ARTIST_TO_EVENT = gql`
     }
   }
 `;
+
+export const ADD_ARTWORK = gql `
+mutation Mutation($title: String!, $stock: Int!, $description: String!, $imageUrl: String, $category: String) {
+  addArtwork(title: $title, stock: $stock, description: $description, imageURL: $imageUrl, category: $category) {
+    _id
+    address
+    artistData {
+      name
+    }
+  }
+}`
