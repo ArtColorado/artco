@@ -8,7 +8,7 @@ import "./index.css";
 import App from "./App.jsx";
 import Home from "./pages/Home.jsx";
 import Login from "./pages/Login.jsx";
-import Signup from "./pages/Signup.jsx";
+import Categories from "./pages/Categories.jsx";
 import Profile from "./pages/Profile.jsx";
 import Artist from "./pages/Artist.jsx";
 import Event from "./pages/Event.jsx";
@@ -29,8 +29,8 @@ const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "/signup",
-        element: <Signup />,
+        path: "/categories",
+        element: <Categories />,
       },
       {
         //Bring up artists page

@@ -1,7 +1,9 @@
-import { Col, Container, Row, Image, Button } from "react-bootstrap";
+import { Col, Container, Row, Image } from "react-bootstrap";
 import Auth from "../utils/auth";
 import Cloudinary from "./Upload";
+import { Link } from "react-router-dom";
 import "./profile.css";
+
 import Artist from "./Artist";
 
 const Profile = () => {
@@ -33,9 +35,15 @@ const Profile = () => {
         <Col md="auto">
           <h2>Upcoming Events</h2>
           <ul>
-            <li>Event 1</li>
-            <li>Event 2</li>
-            <li>Event 3</li>
+            <Link to="#">
+              <li>Event 1</li>
+            </Link>
+            <Link to="#">
+              <li>Event 2</li>
+            </Link>
+            <Link to="#">
+              <li>Event 3</li>
+            </Link>
           </ul>
         </Col>
         <Col xs lg="2"></Col>

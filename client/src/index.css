@@ -85,9 +85,14 @@ button:focus-visible {
   margin: 10px 0px 10px 0px;
 }
 
+
 .site-width {
   width: 90%;
   --bs-gutter-x: 0;
+}
+
+#artwork-category {
+  margin: 10px 0px 10px 0px;
 }
 
 @media (min-width: 768px) {
