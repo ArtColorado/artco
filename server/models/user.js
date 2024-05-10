@@ -37,6 +37,12 @@ const userSchema = new Schema(
         ref: "events",
       },
     ],
+    artworks: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "artwork",
+      },
+    ],
   },
   {
     toJSON: {

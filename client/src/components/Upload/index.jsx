@@ -1,11 +1,20 @@
 import { createContext, useEffect, useState } from "react";
+import { useMutation } from "@apollo/client";
+import { ADD_ARTWORK } from "../../utils/mutations";
 
 // Create a context to manage the script loading state
 const CloudinaryScriptContext = createContext();
 
 // function to UseMation
 
-function CloudinaryUploadWidget({ uwConfig, setPublicId }) {
+function CloudinaryUploadWidget({
+  uwConfig,
+  setPublicId,
+  title,
+  stock,
+  description,
+  category,
+}) {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -29,6 +38,8 @@ function CloudinaryUploadWidget({ uwConfig, setPublicId }) {
 
   //create handlerfunction to call use mutation and create an artwork.
 
+  const [addArtwork, { error }] = useMutation(ADD_ARTWORK);
+
   const initializeCloudinaryWidget = () => {
     if (loaded) {
       var myWidget = window.cloudinary.createUploadWidget(
@@ -39,7 +50,15 @@ function CloudinaryUploadWidget({ uwConfig, setPublicId }) {
             setPublicId(result.info.public_id);
             console.log(result.info.url);
             console.log(result.info.secure_url);
+            const imageURL = results.info.secure_url;
             // call handler function and pass the URL from result
+            try {
+              const { data } = addArtwork({
+                variables: { title, stock, description, category, imageURL },
+              });
+            } catch (err) {
+              console.error(err);
+            }
           }
         }
       );
