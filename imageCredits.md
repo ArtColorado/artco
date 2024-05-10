@@ -16,3 +16,5 @@ Photo by <a href="https://unsplash.com/@itsmiki5?utm_content=creditCopyText&utm_
 
 photography2
 Photo by <a href="https://unsplash.com/@jamie452?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Jamie Street</a> on <a href="https://unsplash.com/photos/black-digital-camera-capturing-yellow-flower-qWYvQMIJyfE?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+
+The date-range-picker on our "add-event" page came from https://github.com/wojtekmaj/react-daterange-picker.
