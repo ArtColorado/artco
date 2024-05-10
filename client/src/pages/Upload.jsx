@@ -65,7 +65,7 @@ export default function App() {
           Upload Widget Reference
         </a>
       </p>
-      <div style={{ width: "800px" }}>
+      <div style={{ width: "100%" }}>
         <AdvancedImage
           style={{ maxWidth: "100%" }}
           cldImg={myImage}

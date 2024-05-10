@@ -1,25 +1,21 @@
 import { Col, Container, Row, Image, Button } from "react-bootstrap";
 import Auth from "../utils/auth";
 import Cloudinary from "./Upload";
-
+import "./profile.css";
 import Artist from "./Artist";
 
 const Profile = () => {
   return (
-    <Container>
+    <Container className="site-width">
       <Row id="username" className="justify-content-center">
-        <Col xs lg="2"></Col>
-        <Col md="auto">
+        <Col md="auto" className="text-center">
           <h1>User/Artist Name</h1>
         </Col>
-        <Col xs lg="2"></Col>
       </Row>
       <Row id="user">
-        <Col xs lg="2" id="userImage">
-          <Image src="/images/images-artists/Elizabeth_Zimmermann.jpg" fluid />
-        </Col>
-        <Col id="userBio">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis
+        <Col xs id="userImage">
+          <Image src="/images/images-artists/Elizabeth_Zimmermann.jpg" fluid className="float-start"/>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis
           sunt excepturi odit dolor at. Facilis, odit. Enim aliquid dolorem
           delectus soluta quisquam id mollitia omnis veniam quidem cumque aut,
           repudiandae, dolor saepe provident nemo iste non dolores nobis est ad
@@ -29,7 +25,7 @@ const Profile = () => {
           iste placeat facilis, explicabo, nam provident officia vel laudantium
           magnam eligendi est libero odio sint nemo tenetur beatae deleniti ipsa
           porro? Nemo laudantium quisquam facilis maiores ea praesentium
-          doloremque modi quis laborum itaque.
+          doloremque modi quis laborum itaque.</p>
         </Col>
       </Row>
       <Row className="justify-content-center">
