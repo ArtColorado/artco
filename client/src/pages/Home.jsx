@@ -8,7 +8,7 @@ import {
   Card,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
 import { useTheme } from "../utils/themeContext";
 import { border } from "@cloudinary/url-gen/qualifiers/background";
 import "./home.css";
@@ -16,6 +16,7 @@ import React from "react";
 
 const Home = () => {
   const [state, dispatch] = useTheme();
+  const [selectedCategory, setSelectedCategory] = useState({});
 
   const themeStyles1 = {
     color: state.darkTheme ? "var(--brown-0)" : "var(--brown-9)",
@@ -27,6 +28,12 @@ const Home = () => {
     boxShadow: state.darkTheme
       ? "2px 2px 5px var(--brown-9)"
       : "2px 2px 5px var(--brown-2)",
+  };
+
+  const handleCategoryClick = (imageValue) => {
+    setSelectedCategory(imageValue);
+    console.log(`imageValue = ${imageValue}`);
+    console.log(`selectedCategory = ${selectedCategory}`);
   };
 
   return (
@@ -75,7 +82,7 @@ const Home = () => {
       </Row>
       <Row>
         <Col id="category-icon" xs={12} md={6} lg={4}>
-          <Link to="#">
+          <Link to="/categories" onClick={() => handleCategoryClick("jewelry")}>
             <Card style={themeStyles2}>
               <Card.Img src="/images/images-categories/jewelry.jpg" />
               <Card.ImgOverlay>
