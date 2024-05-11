@@ -10,9 +10,6 @@ const userSchema = new Schema(
       unique: true,
       trim: true,
     },
-    address: {
-      type: String,
-    },
     email: {
       type: String,
       required: true,
@@ -25,12 +22,12 @@ const userSchema = new Schema(
       minlength: 8,
     },
     artistData: Artist,
-    is_artist: {
-      type: Boolean,
-      default: false,
-    },
-
-    favorite_artists: [Artist],
+    favorite_artists: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "users",
+      },
+    ],
     events: [
       {
         type: Schema.Types.ObjectId,
@@ -62,7 +59,7 @@ userSchema.pre("save", async function (next) {
 });
 
 userSchema.methods.isCorrectPassword = async function (password) {
-  return bcrypt.compare(password, this.password);
+  return await bcrypt.compare(password, this.password);
 };
 
 const User = model("users", userSchema);
