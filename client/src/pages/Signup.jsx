@@ -2,16 +2,15 @@ import React from "react";
 import { useReducer } from "react";
 import { useState } from "react";
 import { useMutation } from "@apollo/client";
-import { LOGIN } from "../utils/mutations";
+import { ADD_USER } from "../utils/mutations";
 import { Container, Form, Col, Row, Button } from "react-bootstrap";
 import { background } from "@cloudinary/url-gen/qualifiers/focusOn";
-import { Link } from "react-router-dom";
 
 import Auth from "../utils/auth";
 import { useTheme } from "../utils/themeContext";
 import "./login.css";
 
-function Login(props) {
+function Signup(props) {
   const [state, dispatch] = useTheme();
 
   const themeStyles1 = {
@@ -32,36 +31,44 @@ function Login(props) {
     color: state.darkTheme ? "var(--brown-0)" : "var(--brown-9)",
   };
 
-  const [loginFormState, setFormState] = useState({ email: "", password: "" });
+  const [signUpState, setSignUpState] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
 
-  const [login, { error }] = useMutation(LOGIN);
+  const [addUser, { error }] = useMutation(ADD_USER);
 
-  const handleLoginChange = (event) => {
+  const handleSignUpChange = (event) => {
     const { name, value } = event.target;
 
-    setFormState({
-      ...loginFormState,
+    setSignUpState({
+      ...signUpState,
       [name]: value,
     });
   };
 
-  const handleLoginFormSubmit = async (event) => {
+  const handleSignUpFormSubmit = async (event) => {
+    console.log("HELLO WORLD");
+    console.log(
+      `username: ${signUpState.username}, email: ${signUpState.email}, password: ${signUpState.password}`
+    );
     event.preventDefault();
-    try {
-      const mutationResponse = await login({
-        variables: {
-          email: loginFormState.email,
-          password: loginFormState.password,
-        },
-      });
-      const token = mutationResponse.data.login.token;
-      Auth.login(token);
-    } catch (e) {
-      console.log(e);
-    }
+    const mutationResponse = await addUser({
+      variables: {
+        username: signUpState.username,
+        email: signUpState.email,
+        password: signUpState.password,
+      },
+    });
+
+    console.log();
+    const token = mutationResponse.data.addUser.token;
+    console.log(token);
+    Auth.login(token);
     // try {
-    //   const { data } = await login({
-    //     variables: { ...formState },
+    //   const { data } = await signUp({
+    //     variables: { ...signUpState },
     //   });
 
     //   AuthService.login(data.login.token);
@@ -69,9 +76,11 @@ function Login(props) {
     //   console.error(err);
     // }
 
-    // setFormState({
+    // setSignUpState({
+    //   username: "",
     //   email: "",
     //   password: "",
+    //   is_artist: "false",
     // });
   };
 
@@ -81,27 +90,39 @@ function Login(props) {
         <Row className="justify-content-center">
           <Col md="auto">
             <h2 id="login-page-intro">
-              <strong>Please sign in or create an account.</strong>
+              <strong>Create an account</strong>
             </h2>
           </Col>
         </Row>
       </Container>
       <Container className="whole-form" style={themeStyle2}>
         <Form
-          className="login-form"
-          id="login-form"
-          onSubmit={handleLoginFormSubmit}
+          className="signup-form"
+          id="signup-form"
+          onSubmit={handleSignUpFormSubmit}
         >
+          <Form.Group className="form-group">
+            <Form.Label className="form-label">Username:</Form.Label>
+            <Form.Control
+              className="form-input"
+              type="text"
+              name="username"
+              value={signUpState.username}
+              id="username-signup"
+              placeholder="username"
+              onChange={handleSignUpChange}
+            />
+          </Form.Group>
           <Form.Group className="form-group">
             <Form.Label className="form-label">Email Address:</Form.Label>
             <Form.Control
               className="form-input"
-              type="email"
+              type="text"
               name="email"
-              id="email-login"
-              value={loginFormState.email}
+              value={signUpState.email}
+              id="email-signup"
               placeholder="name@example.com"
-              onChange={handleLoginChange}
+              onChange={handleSignUpChange}
             />
           </Form.Group>
           <Form.Group className="form-group">
@@ -110,10 +131,10 @@ function Login(props) {
               className="form-input"
               type="password"
               name="password"
-              id="password-login"
-              value={loginFormState.password}
+              value={signUpState.password}
+              id="password-signup"
               placeholder="password"
-              onChange={handleLoginChange}
+              onChange={handleSignUpChange}
             />
             {error ? (
               <div>
@@ -123,25 +144,21 @@ function Login(props) {
               </div>
             ) : null}
           </Form.Group>
-          {/* This button should check the user database for the user and validate their login appropriately */}
+          {/* This button should add the user to the user database */}
           <Form.Group className="form-button mt-3">
             <Button
               variant="secondary"
               type="submit"
-              id="login-button"
+              id="signup-button"
               style={themeStyle3}
             >
-              Login
-            </Button>{" "}
+              Create Account
+            </Button>
           </Form.Group>
         </Form>
-        <Container className="d-flex justify-content-center my-2">
-          <h4>~ OR ~</h4>
-        </Container>
-        <Link to="/signup">Sign Up</Link>
       </Container>
     </div>
   );
 }
 
-export default Login;
+export default Signup;

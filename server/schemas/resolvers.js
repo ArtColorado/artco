@@ -1,4 +1,4 @@
-const { Error } = require("mongoose");
+// const { Error } = require("mongoose");
 const { User, Artwork, Event } = require("../models");
 const { signToken, AuthenticationError } = require("../utils/auth");
 
@@ -24,11 +24,11 @@ const resolvers = {
   },
 
   Mutation: {
-    addUser: async (parent, { username, email, password, is_artist }) => {
-      const user = await User.create({ username, email, password, is_artist });
+    addUser: async (parent, { username, email, password }) => {
+      const user = await User.create({ username, email, password });
       const token = signToken(user);
 
-      return { token, user, is_artist };
+      return { token, user };
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });

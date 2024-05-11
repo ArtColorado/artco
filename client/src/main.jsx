@@ -14,8 +14,9 @@ import Artist from "./pages/Artist.jsx";
 import Event from "./pages/Event.jsx";
 import EventList from "./pages/EventList.jsx";
 import AddEvent from "./pages/AddEvent.jsx";
-import artWorkForm from "./components/ArtWorkForm/index.jsx";
+import ArtWorkForm from "./components/ArtWorkForm/index.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
+import Signup from "./pages/Signup.jsx";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/signup",
+        element: <Signup />,
       },
       {
         path: "/categories",
@@ -56,6 +61,10 @@ const router = createBrowserRouter([
       {
         path: "/addevent",
         element: <AddEvent />,
+      },
+      {
+        path: "/addArt",
+        element: <ArtWorkForm />,
       },
     ],
   },

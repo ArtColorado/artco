@@ -25,21 +25,21 @@ type Event {
 type User {
     _id: ID!
     username: String!
-    address: String
     email: String!
+    password: String!
     artistData: Artist
-    is_artist: String!
     favorite_artists: [User]
     events: [Event]
+    artworks: [Artwork]
 }
 
 type Auth {
-    token: ID!
+    token: ID
     user: User
 }
 
 type Query {
-    users: [User]!
+    users: [User]
     user(userId: ID!): User
     artwork(artworkId: ID!): Artwork
     events: [Event]!
@@ -48,15 +48,15 @@ type Query {
 }
 
 type Mutation {
-    addUser(username: String!, email: String!, password: String!, is_artist: String!): Auth
+    addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-   addArtwork( title: String!, imageURL: String, stock: Int!, description: String!, category: String): Artwork
-   updateArtwork(title: String!, imageURL: String!, stock: Int!, description: String!): Artwork
-   removeArtwork: Artwork
-   createArtist(bio: String!, name: String!): User
-   addEvent(name: String!, location: String!, date: String!): Event
-   addArtisttoEvent(userId: ID, eventId: ID!): Event
-   creditArtistWithArtwork(artworkId: ID!): User
+    addArtwork( title: String!, imageURL: String, stock: Int!, description: String!, category: String): Artwork
+    updateArtwork(title: String!, imageURL: String!, stock: Int!, description: String!): Artwork
+    removeArtwork: Artwork
+    createArtist(bio: String!, name: String!): User
+    addEvent(name: String!, location: String!, date: String!): Event
+    addArtisttoEvent(userId: ID, eventId: ID!): Event
+    creditArtistWithArtwork(artworkId: ID!): User
 }
 
 `;
