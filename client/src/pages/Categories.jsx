@@ -1,14 +1,16 @@
 import { Container, Row, Col, Image, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { useReducer } from "react";
+import { useReduce, useState } from "react";
 import { useQuery } from "@apollo/client";
 import { useTheme } from "../utils/themeContext";
 import Home from "./Home";
 import "../index.css";
 import { QUERY_ARTWORK } from "../utils/queries";
+import Artwork from "../components/ArtWork/index";
 
-const Categories = ({ prop }) => {
+const Categories = () => {
   const [state, dispatch] = useTheme();
+  const [category, setCategory] = useState("");
 
   const themeStyle2 = {
     borderColor: state.darkTheme ? "var(--brown-4)" : "white",
@@ -18,20 +20,15 @@ const Categories = ({ prop }) => {
     background: state.darkTheme ? "var(--brown-3)" : "white",
   };
 
-  const { data } = useQuery(QUERY_ARTWORK);
-  let artwork;
-
-  if (data) {
-    artwork = data.artwork;
-  }
-
-  console.log({ prop });
+  const handleListSelection = (event) => {
+    setCategory(event.target.value);
+  };
 
   return (
     <Container className="site-width">
       <Row className="px-2">
         {/* This select box should default to 'Choose a category' when navigated to through the navbar, otherwise it should populate with the correct category if navigated here by clicking on a category from the Home page */}
-        <Form.Select size="lg" value={prop}>
+        <Form.Select size="lg" onChange={handleListSelection}>
           <option>Choose a category</option>
           <option value="jewelry">Jewelry</option>
           <option value="painting">Painting</option>
@@ -43,23 +40,7 @@ const Categories = ({ prop }) => {
       </Row>
       <Row>
         {/* This row should populate with any art that is associated with the selected category */}
-        {artwork ? (
-          <>
-            {artwork.category.map(({}, index) => (
-              <Col id="artwork-category" xs={12} md={4} lg={3}>
-                <Link to="#">
-                  <Image
-                    style={themeStyle2}
-                    src={`${artwork.imageURL}`}
-                    rounded
-                    thumbnail
-                    fluid
-                  />
-                </Link>
-              </Col>
-            ))}
-          </>
-        ) : null}
+        <Artwork category={category} />
         <Col id="artwork-category" xs={12} md={4} lg={3}>
           <Link to="#">
             <Image

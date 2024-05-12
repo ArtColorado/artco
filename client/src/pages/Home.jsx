@@ -14,9 +14,11 @@ import { border } from "@cloudinary/url-gen/qualifiers/background";
 import "./home.css";
 import React from "react";
 
+import Categories from "./Categories";
+
 const Home = () => {
   const [state, dispatch] = useTheme();
-  const [selectedCategory, setSelectedCategory] = useState({});
+  const [selectedCategory, setSelectedCategory] = useState("");
 
   const themeStyles1 = {
     color: state.darkTheme ? "var(--brown-0)" : "var(--brown-9)",
@@ -32,8 +34,7 @@ const Home = () => {
 
   const handleCategoryClick = (imageValue) => {
     setSelectedCategory(imageValue);
-    console.log(`imageValue = ${imageValue}`);
-    console.log(`selectedCategory = ${selectedCategory}`);
+    localStorage.setItem("states", selectedCategory);
   };
 
   return (
@@ -81,8 +82,12 @@ const Home = () => {
         </Col>
       </Row>
       <Row>
+        <Link to="/categories">Categories Page</Link>
+      </Row>
+
+      {/* <Row>
         <Col id="category-icon" xs={12} md={6} lg={4}>
-          <Link to="/categories" onClick={() => handleCategoryClick("jewelry")}>
+          <Link to="/categories" onClick={handleCategoryClick}>
             <Card style={themeStyles2}>
               <Card.Img src="/images/images-categories/jewelry.jpg" />
               <Card.ImgOverlay>
@@ -196,7 +201,7 @@ const Home = () => {
           </Link>
         </Col>
         <Col className="my-4"></Col>
-      </Row>
+      </Row> */}
     </Container>
   );
 };
