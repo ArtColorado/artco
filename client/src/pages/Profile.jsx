@@ -1,8 +1,11 @@
 import { Col, Container, Row, Image } from "react-bootstrap";
 import AuthService from "../utils/auth";
 import Cloudinary from "./Upload";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useTheme } from "../utils/themeContext";
+import { useQuery } from "@apollo/client";
+
+import { QUERY_ARTIST } from "../utils/queries";
 import "./profile.css";
 
 const Profile = () => {
@@ -12,12 +15,21 @@ const Profile = () => {
     color: state.darkTheme ? "var(--brown-0)" : "var(--brown-9)",
   };
 
+  //Need to pull in a user and set it up to pull keys from it for data
+  //Where will the user's _id be pull in from?
+  const { data } = useQuery(QUERY_ARTIST);
+  let user;
+
+  if (data) {
+    user = data.user;
+  }
+
   return (
     <Container className="site-width" style={themeStyles1}>
       <Row id="username" className="justify-content-center">
         {/* Pull in user's name */}
         <Col md="auto" className="text-center">
-          <h1>User/Artist Name</h1>
+          <h1>{user.name}</h1>
         </Col>
       </Row>
       <Row id="user">
