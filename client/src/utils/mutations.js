@@ -59,24 +59,27 @@ export const ADD_ARTIST_TO_EVENT = gql`
 export const ADD_ARTWORK = gql`
   mutation addArtwork(
     $title: String!
-    $imageURL: String
-    $stock: Int!
+    $stock: String!
     $description: String!
-    $category: String
+    $category: String!
+    $imageURL: String!
   ) {
     addArtwork(
       title: $title
-      imageURL: $imageURL
       stock: $stock
       description: $description
       category: $category
+      imageURL: $imageURL
     ) {
       artwork {
         title
-        imageURL
         stock
         description
         category
+        imageURL
+        artist {
+          _id
+        }
       }
     }
   }

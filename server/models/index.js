@@ -1,5 +1,5 @@
-const ArtWork = require("./artwork");
+const Artwork = require("./artwork");
 const User = require("./user");
 const Event = require("./event");
 
-module.exports = { User, ArtWork, Event};
+module.exports = { User, Artwork, Event };

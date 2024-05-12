@@ -1,6 +1,5 @@
 const { GraphQLError } = require("graphql");
 const jwt = require("jsonwebtoken");
-const { User } = require("../models");
 
 const secret = `${process.env.SECRET}`;
 const expiration = "8h";
@@ -17,8 +16,6 @@ module.exports = {
     if (req.headers.authorization) {
       token = token.split(" ").pop().trim();
     }
-
-    console.log("token", token);
 
     if (!token) {
       return req;

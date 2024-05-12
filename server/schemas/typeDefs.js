@@ -1,11 +1,12 @@
 const typeDefs = `
 type Artwork {
-    _id: ID!
+    _id: ID
     title: String!
-    imageURL: String!
-    stock: Int!
+    stock: String!
     description: String!
-    artist: User!
+    category: String!
+    imageURL: String!
+    artist: User
 }
 
 type Artist {
@@ -50,7 +51,7 @@ type Query {
 type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addArtwork( title: String!, imageURL: String, stock: Int!, description: String!, category: String): Artwork
+    addArtwork( title: String!, stock: String!, description: String!, category: String!, imageURL: String!): Artwork
     updateArtwork(title: String!, imageURL: String!, stock: Int!, description: String!): Artwork
     removeArtwork: Artwork
     createArtist(bio: String!, name: String!): User

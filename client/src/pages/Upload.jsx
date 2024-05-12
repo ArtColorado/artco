@@ -11,6 +11,13 @@ export default function App() {
   const [cloudName] = useState("artco");
   // Replace with your own upload preset
   const [uploadPreset] = useState("artcolorado");
+  // const [title, setTitle] = useState(props.title);
+  // const [stock, setStock] = useState(props.stock);
+  // const [description, setDescription] = useState(props.description);
+  // const [category, setCategory] = useState(props.category);
+  // console.log(
+  //   `title: ${title}, stock: ${stock}, description: ${description}, category: ${category}`
+  // );
 
   // Upload Widget Configuration
   // Remove the comments from the code below to add
@@ -47,7 +54,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <h3>Upload your art</h3>
+      <h3>Add image</h3>
       <CloudinaryUploadWidget uwConfig={uwConfig} setPublicId={setPublicId} />
 
       <div style={{ width: "100%" }}>

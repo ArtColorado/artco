@@ -1,17 +1,13 @@
 const { Schema, model } = require("mongoose");
 
-const artWorkSchema = new Schema(
+const artworkSchema = new Schema(
   {
     title: {
       type: String,
       required: true,
     },
-    imageURL: {
-      type: String,
-    },
     stock: {
-      type: Number,
-      default: 1,
+      type: String,
       required: true,
     },
     description: {
@@ -22,6 +18,15 @@ const artWorkSchema = new Schema(
     },
     category: {
       type: String,
+      required: true,
+    },
+    imageURL: {
+      type: String,
+      required: true,
+    },
+    artist: {
+      type: Schema.Types.ObjectId,
+      ref: "users",
     },
   },
   {
@@ -31,10 +36,10 @@ const artWorkSchema = new Schema(
     id: false,
   }
 );
-artWorkSchema.virtual("artWorkCount").get(function () {
-  return this.title.length;
-});
+// artworkSchema.virtual("artworkCount").get(function () {
+//   return this.title.length;
+// });
 
-const Artwork = model("artwork", artWorkSchema);
+const Artwork = model("artworks", artworkSchema);
 
 module.exports = Artwork;

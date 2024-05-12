@@ -14,7 +14,7 @@ import Artist from "./pages/Artist.jsx";
 import Event from "./pages/Event.jsx";
 import EventList from "./pages/EventList.jsx";
 import AddEvent from "./pages/AddEvent.jsx";
-import ArtWorkForm from "./components/ArtWorkForm/index.jsx";
+import ArtworkForm from "./pages/ArtworkForm.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
 import Signup from "./pages/Signup.jsx";
 
@@ -64,7 +64,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/addArt",
-        element: <ArtWorkForm />,
+        element: <ArtworkForm />,
       },
     ],
   },
