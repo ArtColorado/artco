@@ -84,15 +84,20 @@ const Header = () => {
                     <Nav.Link href="/me">My Profile</Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                    <Nav.Link href="#" id="logout">
+                    <Nav.Link onClick={AuthService.logout} id="logout">
                       Logout
                     </Nav.Link>
                   </Nav.Item>
                 </>
               ) : (
+                <>
                 <Nav.Item>
-                  <Nav.Link href="/login">Login/Signup</Nav.Link>
+                  <Nav.Link href="/login">Login</Nav.Link>
                 </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link href="/signup">Signup</Nav.Link>
+                </Nav.Item>
+                </>
               )}
             </Nav>
           </Offcanvas.Body>

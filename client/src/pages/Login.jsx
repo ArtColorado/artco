@@ -81,7 +81,7 @@ function Login(props) {
         <Row className="justify-content-center">
           <Col md="auto">
             <h2 id="login-page-intro">
-              <strong>Please sign in or create an account.</strong>
+              <strong>Please sign in or <Link to="/signup">create an account.</Link></strong>
             </h2>
           </Col>
         </Row>
@@ -135,10 +135,9 @@ function Login(props) {
             </Button>{" "}
           </Form.Group>
         </Form>
-        <Container className="d-flex justify-content-center my-2">
+        {/* <Container className="d-flex justify-content-center my-2">
           <h4>~ OR ~</h4>
-        </Container>
-        <Link to="/signup">Sign Up</Link>
+        </Container> */}
       </Container>
     </div>
   );
