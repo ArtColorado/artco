@@ -5,6 +5,7 @@ import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
 import { Container, Form, Col, Row, Button } from "react-bootstrap";
 import { background } from "@cloudinary/url-gen/qualifiers/focusOn";
+import { Link } from "react-router-dom";
 
 import Auth from "../utils/auth";
 import { useTheme } from "../utils/themeContext";
@@ -90,7 +91,9 @@ function Signup(props) {
         <Row className="justify-content-center">
           <Col md="auto">
             <h2 id="login-page-intro">
-              <strong>Create an account</strong>
+              <strong>
+                Create an account <Link to="/login">or sign in.</Link>
+              </strong>
             </h2>
           </Col>
         </Row>
