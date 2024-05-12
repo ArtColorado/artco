@@ -30,6 +30,7 @@ const resolvers = {
 
       return { token, user };
     },
+
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
@@ -49,32 +50,32 @@ const resolvers = {
 
     addArtwork: async (
       parent,
-      { title, imageURL, stock, description, category },
+      { title, stock, description, category, imageURL },
       context
     ) => {
-      if (!context.user) {
+      if (context.user) {
+        const newArtwork = await Artwork.create({
+          title: title,
+          stock: stock,
+          description: description,
+          category: category,
+          imageURL: imageURL,
+          artist: context.user._id,
+        });
+
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { artworks: newArtwork._id } }
+        );
+
+        return newArtwork;
+
+        console.log("help me");
         throw AuthenticationError;
       }
-      const newArtwork = await Artwork.create({
-        title,
-        imageURL,
-        stock,
-        description,
-        category,
-      });
 
-      const artworkId = newArtwork._id;
-
-      const creditArtist = await User.findOneAndUpdate(
-        { _id: context.user._id },
-        {
-          addToSet: {
-            artworkId,
-          },
-        }
-      );
-
-      return newArtwork;
+      throw AuthenticationError;
+      ("You need to be logged in!");
     },
 
     updateArtwork: async (
@@ -105,6 +106,7 @@ const resolvers = {
     removeArtwork: async (parent, { artworkId }) => {
       return Artwork.findOneandDelete({ _id: artworkId });
     },
+
     createArtist: async (parent, { name, bio }, context) => {
       if (!context.user) {
         throw AuthenticationError;
