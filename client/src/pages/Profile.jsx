@@ -29,7 +29,8 @@ const Profile = () => {
       <Row id="username" className="justify-content-center">
         {/* Pull in user's name */}
         <Col md="auto" className="text-center">
-          <h1>{user.name}</h1>
+          {/* I commented this out for the moment so I can work on the rest of the page, because it isn't working.*/}
+          {/* <h1>{user.name}</h1> */}
         </Col>
       </Row>
       <Row id="user">
@@ -103,6 +104,7 @@ const Profile = () => {
           <Link to="/addArt">Add Artwork</Link>
         </Col>
       </Row>
+      <Row style={{ height: "30px" }}></Row>
     </Container>
   );
 };
