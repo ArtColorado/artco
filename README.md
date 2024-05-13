@@ -24,6 +24,8 @@ Find local Colorado artists, and see where they will be exhibiting next. Or find
 
 ![homepage screenshot](./client/src/assets/screenshots/homepage.png)
 
+![login page screenshot](./client/src/assets/screenshots/login.png)
+
 ## [Demonstration](#table-of-contents)
 
 (add demonstration video here)
@@ -45,6 +47,7 @@ https://choosealicense.com/licenses/mit/
 ## [Links](#table-of-contents)
 
 Live site: https://artco.onrender.com/
+
 Github repo: https://github.com/ArtColorado/artco
 
 ## [Credits](#table-of-contents)
