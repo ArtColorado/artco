@@ -92,14 +92,14 @@ const Event = () => {
           </Link>
         </Col>
         <Col id="event-artist" xs={12} md={4} lg={3}>
-          <Link to="#">
+          <Link to="/artist">
             <Card className="mb-3" style={themeStyles2}>
               <Card.Img
                 variant="top"
-                src="images/images-artists/Katherine_Choy.jpg"
+                src="images/images-artists/Elizabeth_Zimmermann.jpg"
               />
               <Card.Body>
-                <Card.Text>Katherine Choy</Card.Text>
+                <Card.Text>Elizabeth Zimmermann</Card.Text>
               </Card.Body>
             </Card>
           </Link>
