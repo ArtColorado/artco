@@ -38,6 +38,7 @@ function ArtworkForm(props) {
       <Container className="whole-form" style={themeStyle2}>
         <Cloudinary />
       </Container>
+      <Row style={{height: "30px"}}></Row>
     </div>
   );
 }

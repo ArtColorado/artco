@@ -105,26 +105,29 @@ function CloudinaryUploadWidget(props) {
         <div>
           <Form id="artworkInfo">
             <Form.Group className="form-group">
-              <Form.Label className="form-label">Title:</Form.Label>
-              <input
+              <Form.Label className="form-label" style={{width: "30%"}}>Title:</Form.Label>
+              <Form.Control
                 value={title}
+                id="title"
+                className="form-input"
                 onChange={(e) => setTitle(e.target.value)}
                 type="text"
                 placeholder="title"
               />
             </Form.Group>
             <Form.Group className="form-group">
-              <Form.Label className="form-label">Number in Stock:</Form.Label>
-              <input
+              <Form.Label className="form-label" style={{width: "30%"}}>Number in Stock:</Form.Label>
+              <Form.Control
                 value={stock}
+                className="form-input"
                 onChange={(e) => setStock(e.target.value)}
-                type="number"
+                type="text"
                 placeholder="stock"
               />
             </Form.Group>
             <Form.Group className="form-group">
-              <Form.Label className="form-label">Description:</Form.Label>
-              <input
+              <Form.Label className="form-label" style={{width: "30%"}}>Description:</Form.Label>
+              <Form.Control
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 type="text"
@@ -132,8 +135,8 @@ function CloudinaryUploadWidget(props) {
               />
             </Form.Group>
             <Form.Group className="form-group">
-              <Form.Label className="form-label">Category:</Form.Label>
-              <select
+              <Form.Label className="form-label" style={{width: "30%"}}>Category:</Form.Label>
+              <Form.Select
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
               >
@@ -144,7 +147,7 @@ function CloudinaryUploadWidget(props) {
                 <option>Pottery</option>
                 <option>Textile</option>
                 <option>Woodworking</option>
-              </select>
+              </Form.Select>
             </Form.Group>
             <Form.Group className="form-button">
               <Button
