@@ -13,7 +13,10 @@ const Artist = () => {
   };
 
   const themeStyle2 = {
-    border: state.darkTheme ? "5px solid var(--brown-0)" : "5px solid var(--brown-9)",
+    border: state.darkTheme ? "5px solid var(--brown-3)" : "5px solid white",
+    boxShadow: state.darkTheme
+    ? "2px 2px 5px var(--brown-9)"
+    : "2px 2px 5px var(--brown-2)",
   };
 
   return (
@@ -69,22 +72,28 @@ const Artist = () => {
         </Col>
         <Col xs lg="2"></Col>
       </Row>
-      <Row id="gallery">
+      <Row id="gallery" className="text-center">
         {/* This should populate all the images of the artist's work */}
-        <Col>
+        <Col xs={12} md={6} lg={4}>
           <Image
+          className="mb-3"
+          style={themeStyle2}
             src="/images/images-artwork/Elizabeth_Zimmerman_Baby_Surprise_Jacket.jpg"
             fluid
           />
         </Col>
-        <Col>
+        <Col xs={12} md={6} lg={4}>
           <Image
+          className="mb-3"
+          style={themeStyle2}
             src="/images/images-artwork/Elizabeth_Zimmerman_Contrast_Cardigan.jpg"
             fluid
           />
         </Col>
-        <Col>
+        <Col xs={12} md={6} lg={4}>
           <Image
+          className="mb-3"
+          style={themeStyle2}
             src="/images/images-artwork/Elizabeth_Zimmerman_Knitting_Around.jpg"
             fluid
           />
