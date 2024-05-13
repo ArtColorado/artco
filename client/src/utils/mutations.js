@@ -71,15 +71,14 @@ export const ADD_ARTWORK = gql`
       category: $category
       imageURL: $imageURL
     ) {
-      artwork {
-        title
-        stock
-        description
-        category
-        imageURL
-        artist {
-          _id
-        }
+      _id
+      title
+      stock
+      description
+      category
+      imageURL
+      artist {
+        _id
       }
     }
   }

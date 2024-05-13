@@ -45,6 +45,7 @@ type Query {
     artwork(artworkId: ID!): Artwork
     events: [Event]!
     event(eventId: ID!): Event
+    me: User
 
 }
 

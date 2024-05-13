@@ -1,12 +1,13 @@
 import { Col, Container, Row, Image } from "react-bootstrap";
-import AuthService from "../utils/auth";
+
 import Cloudinary from "./Upload";
 import { Link, useParams } from "react-router-dom";
 import { useTheme } from "../utils/themeContext";
 import { useQuery } from "@apollo/client";
 
-import { QUERY_ARTIST } from "../utils/queries";
+import { QUERY_SINGLE_USER } from "../utils/queries";
 import "./profile.css";
+import Auth from "../utils/auth";
 
 const Profile = () => {
   const [state, dispatch] = useTheme();
@@ -17,11 +18,28 @@ const Profile = () => {
 
   //Need to pull in a user and set it up to pull keys from it for data
   //Where will the user's _id be pull in from?
-  const { data } = useQuery(QUERY_ARTIST);
-  let user;
 
-  if (data) {
-    user = data.user;
+  const profile = Auth.getProfile().data;
+  console.log(profile._id);
+  const { loading, data } = useQuery(QUERY_SINGLE_USER, {
+    variables: { userId: profile._id },
+  });
+
+  const user = data?.user || {};
+
+  console.log(user);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!user?.username) {
+    return (
+      <h4>
+        You need to be logged in to see this. Use the navigations links to sign
+        up or login!
+      </h4>
+    );
   }
 
   return (
@@ -29,8 +47,7 @@ const Profile = () => {
       <Row id="username" className="justify-content-center">
         {/* Pull in user's name */}
         <Col md="auto" className="text-center">
-          {/* I commented this out for the moment so I can work on the rest of the page, because it isn't working.*/}
-          {/* <h1>{user.name}</h1> */}
+          <h1>{user.username}</h1>
         </Col>
       </Row>
       <Row id="user">
@@ -41,21 +58,14 @@ const Profile = () => {
             fluid
             className="float-start"
           />
-          {/* Bio will be pulled in to populate this section */}
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            Perferendis sunt excepturi odit dolor at. Facilis, odit. Enim
-            aliquid dolorem delectus soluta quisquam id mollitia omnis veniam
-            quidem cumque aut, repudiandae, dolor saepe provident nemo iste non
-            dolores nobis est ad explicabo quo. Odit, ab vero eaque incidunt
-            necessitatibus ea quam unde doloremque provident eveniet mollitia
-            esse quo est inventore soluta quaerat molestiae. Dicta accusamus
-            qui, asperiores corrupti iste placeat facilis, explicabo, nam
-            provident officia vel laudantium magnam eligendi est libero odio
-            sint nemo tenetur beatae deleniti ipsa porro? Nemo laudantium
-            quisquam facilis maiores ea praesentium doloremque modi quis laborum
-            itaque.
-          </p>
+          {user.artistData ? (
+            <p>{user.artistData.bio}</p>
+          ) : (
+            <>
+              <p>Are you a local Colorado artist?</p>
+              <button>Add a brief bio</button>
+            </>
+          )}
         </Col>
       </Row>
       <Row className="justify-content-center">

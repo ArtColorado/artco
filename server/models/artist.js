@@ -9,20 +9,8 @@ const artistSchema = new Schema({
     type: String,
     required: true,
     maxLength: 1000,
-    description: "bio can not be lnger than 1,000 characters",
+    description: "bio can not be longer than 1,000 characters",
   },
-  events: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "event",
-    },
-  ],
-  artWorks: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "artWork",
-    },
-  ],
 });
 
 module.exports = artistSchema;
