@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import Cloudinary from "../../pages/Upload";
 import { useState } from "react";
-
+import "../../index.css"
 const ArtWorkForm = () => {
   const [title, setTitle] = useState("");
   const [stock, setStock] = useState("");
@@ -26,7 +26,7 @@ const ArtWorkForm = () => {
   //   };
 
   return (
-    <div>
+    <div className="site-width">
       <Row>
         <form onSubmit={handleCreateArtworkInfoFormSubmit} id="artworkInfo">
           <input

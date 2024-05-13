@@ -114,6 +114,7 @@ const Profile = () => {
           <Link to="/addArt">Add Artwork</Link>
         </Col>
       </Row>
+      <Row style={{ height: "30px" }}></Row>
     </Container>
   );
 };
