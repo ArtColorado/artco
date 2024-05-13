@@ -83,14 +83,25 @@ export const QUERY_EVENTS = gql`
 export const QUERY_ME = gql`
   query me {
     me {
-      _id
       username
       email
       name
       bio
-      favorite_artists
-      events
-      artworks
+      favorite_artists {
+        username
+      }
+      events {
+        name
+        location
+        date
+      }
+      artworks {
+        title
+        stock
+        description
+        category
+        imageURL
+      }
     }
   }
 `;

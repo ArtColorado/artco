@@ -5,7 +5,10 @@ const { signToken, AuthenticationError } = require("../utils/auth");
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find();
+      return User.find()
+        .populate("favorite_artists")
+        .populate("events")
+        .populate("artworks");
     },
 
     user: async (parent, { userId }) => {

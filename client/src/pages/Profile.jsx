@@ -6,7 +6,7 @@ import ArtistInfoForm from "../components/ArtistInfo/index";
 import { useTheme } from "../utils/themeContext";
 import { useQuery } from "@apollo/client";
 
-import { QUERY_SINGLE_USER } from "../utils/queries";
+import { QUERY_SINGLE_USER, QUERY_ME } from "../utils/queries";
 import "./profile.css";
 import Auth from "../utils/auth";
 
@@ -29,11 +29,9 @@ const Profile = () => {
 
   const profile = Auth.getProfile().data;
   console.log(profile);
-  const { loading, data } = useQuery(QUERY_SINGLE_USER, {
-    variables: { userId: profile._id },
-  });
+  const { loading, data } = useQuery(QUERY_ME, {});
 
-  const user = data?.user || {};
+  const user = data?.me || {};
 
   console.log(user);
 

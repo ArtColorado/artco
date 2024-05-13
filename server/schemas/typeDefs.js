@@ -1,6 +1,6 @@
 const typeDefs = `
 type Artwork {
-    _id: ID
+    _id: ID!
     title: String!
     stock: String!
     description: String!
