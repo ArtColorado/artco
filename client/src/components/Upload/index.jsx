@@ -94,7 +94,12 @@ function CloudinaryUploadWidget(props) {
       <Row className="my-2 form-button">
         <button
           id="upload_widget"
-          style={{backgroundColor: "var(--brown-4)", fontWeight: "bold", fontSize: "16px", padding: "10px"}}
+          style={{
+            backgroundColor: "var(--brown-4)",
+            fontWeight: "bold",
+            fontSize: "16px",
+            padding: "10px",
+          }}
           className="cloudinary-button"
           onClick={initializeCloudinaryWidget}
         >
@@ -105,7 +110,9 @@ function CloudinaryUploadWidget(props) {
         <div>
           <Form id="artworkInfo">
             <Form.Group className="form-group">
-              <Form.Label className="form-label" style={{width: "30%"}}>Title:</Form.Label>
+              <Form.Label className="form-label" style={{ width: "30%" }}>
+                Title:
+              </Form.Label>
               <Form.Control
                 value={title}
                 id="title"
@@ -116,7 +123,9 @@ function CloudinaryUploadWidget(props) {
               />
             </Form.Group>
             <Form.Group className="form-group">
-              <Form.Label className="form-label" style={{width: "30%"}}>Number in Stock:</Form.Label>
+              <Form.Label className="form-label" style={{ width: "30%" }}>
+                Number in Stock:
+              </Form.Label>
               <Form.Control
                 value={stock}
                 className="form-input"
@@ -126,7 +135,9 @@ function CloudinaryUploadWidget(props) {
               />
             </Form.Group>
             <Form.Group className="form-group">
-              <Form.Label className="form-label" style={{width: "30%"}}>Description:</Form.Label>
+              <Form.Label className="form-label" style={{ width: "30%" }}>
+                Description:
+              </Form.Label>
               <Form.Control
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
@@ -135,7 +146,9 @@ function CloudinaryUploadWidget(props) {
               />
             </Form.Group>
             <Form.Group className="form-group">
-              <Form.Label className="form-label" style={{width: "30%"}}>Category:</Form.Label>
+              <Form.Label className="form-label" style={{ width: "30%" }}>
+                Category:
+              </Form.Label>
               <Form.Select
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
@@ -150,14 +163,16 @@ function CloudinaryUploadWidget(props) {
               </Form.Select>
             </Form.Group>
             <Form.Group className="form-button">
-              <Button
-                className="addArtwork"
-                type="submit"
-                id="artwork-submit-button"
-                onClick={handleCreateArtworkInfoFormSubmit}
-              >
-                Add Your Artwork
-              </Button>
+              <Link to="/me">
+                <Button
+                  className="addArtwork"
+                  type="submit"
+                  id="artwork-submit-button"
+                  onClick={handleCreateArtworkInfoFormSubmit}
+                >
+                  Add Your Artwork
+                </Button>
+              </Link>
             </Form.Group>
           </Form>
         </div>

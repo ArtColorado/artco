@@ -9,8 +9,8 @@ const resolvers = {
     },
 
     user: async (parent, { userId }) => {
-      return User.findOne({ _id: userId });
-      s;
+      const foundUser = await User.findOne({ _id: userId });
+      return foundUser;
     },
 
     artwork: async (parent, { artworkId }) => {
@@ -119,14 +119,15 @@ const resolvers = {
       if (!context.user) {
         throw AuthenticationError;
       }
-      return User.findOneAndUpdate(
+      const updatedUser = await User.findOneAndUpdate(
         { _id: context.user._id },
         {
-          $addToSet: { artistData: { bio: bio, name: name } },
+          $set: { bio: bio, name: name },
         },
-
-        { new: true, runValidators: true }
+        { new: true }
       );
+
+      return updatedUser;
     },
 
     addEvent: async (parent, { name, location, date }, context) => {

@@ -12,10 +12,11 @@ export const ADD_USER = gql`
   }
 `;
 
-export const Create_Artist = gql`
-  mutation createArtist($userId: ID!, $bio: String!) {
-    createArtist(profileId: $profileId, skill: $skill) {
-      _id
+export const CREATE_ARTIST = gql`
+  mutation createArtist($bio: String, $name: String) {
+    createArtist(bio: $bio, name: $name) {
+      username
+      email
       name
       bio
     }

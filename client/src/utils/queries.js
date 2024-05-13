@@ -5,10 +5,8 @@ export const QUERY_SINGLE_USER = gql`
     user(userId: $userId) {
       username
       email
-      artistData {
-        name
-        bio
-      }
+      name
+      bio
       favorite_artists {
         username
       }
@@ -73,7 +71,7 @@ export const QUERY_EVENTS = gql`
   query Events {
     events {
       artists {
-        name
+        username
       }
       date
       location
@@ -88,7 +86,11 @@ export const QUERY_ME = gql`
       _id
       username
       email
-      artistData
+      name
+      bio
+      favorite_artists
+      events
+      artworks
     }
   }
 `;
