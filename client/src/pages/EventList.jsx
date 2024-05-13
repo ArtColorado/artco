@@ -58,39 +58,43 @@ const EventList = () => {
         <Stack>
           {/* Implement a .map to autofill the cards into the stack and possibly sort by events that are coming up*/}
           <Card className="mt-3" style={themeStyles2}>
-            <Card.Header as="h5">Event Name</Card.Header>
+            <Card.Header as="h5">Denver Arts & Crafts Fair</Card.Header>
             <Card.Body>
-              <Card.Title>Event Date</Card.Title>
-              <Card.Text>Event description</Card.Text>
+              <Card.Title>May 18, 2024 - May 19, 2024</Card.Title>
+              <Card.Text>Come to Denver and meet local artists from all around Colorado! See a wide variety of arts and artists, from photography and painting to textile arts and woodworking.</Card.Text>
+              <div className="text-center">
               <Link to="/event">
                 <Button style={themeStyle3}>View Event Details</Button>
               </Link>
+              </div>
             </Card.Body>
           </Card>
           <Card className="mt-3" style={themeStyles2}>
-            <Card.Header as="h5">Featured</Card.Header>
+            <Card.Header as="h5">Boulder Artists and Artisans</Card.Header>
             <Card.Body>
-              <Card.Title>Special title treatment</Card.Title>
+              <Card.Title>June 1, 2024 - June 2, 2024</Card.Title>
               <Card.Text>
-                With supporting text below as a natural lead-in to additional
-                content.
+                Colorado's biggest art show, with artists showcasing their work in painting, photography, textile arts, and so much more!
               </Card.Text>
+              <div className="text-center">
               <Link to="/event">
-                <Button style={themeStyle3}>Go somewhere</Button>
+                <Button style={themeStyle3}>View Event Details</Button>
               </Link>
+              </div>
             </Card.Body>
           </Card>
           <Card className="mt-3" style={themeStyles2}>
-            <Card.Header as="h5">Featured</Card.Header>
+            <Card.Header as="h5">Bailey Art Extravaganza!</Card.Header>
             <Card.Body>
-              <Card.Title>Special title treatment</Card.Title>
+              <Card.Title>July 15th, 2024 - July 16th, 2024</Card.Title>
               <Card.Text>
-                With supporting text below as a natural lead-in to additional
-                content.
+                Come to Bailey and enjoy our beautiful scenery while exploring local artists and their creations!
               </Card.Text>
+              <div className="text-center">
               <Link to="/event">
-                <Button style={themeStyle3}>Go somewhere</Button>
+                <Button style={themeStyle3}>View Event Details</Button>
               </Link>
+              </div>
             </Card.Body>
           </Card>
         </Stack>
