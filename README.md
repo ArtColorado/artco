@@ -87,7 +87,10 @@ The date-range-picker on our "add-event" page came from https://github.com/wojte
 
 Please contact us with any questions using the following links:
 
-https://github.com/Meyerst19
-https://github.com/MelissaCade
-https://github.com/PeteOottamakorn
+https://github.com/Meyerst19 
+
+https://github.com/MelissaCade 
+
+https://github.com/PeteOottamakorn 
+
 https://github.com/mikededo58
