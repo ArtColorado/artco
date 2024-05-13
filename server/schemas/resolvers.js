@@ -10,6 +10,7 @@ const resolvers = {
 
     user: async (parent, { userId }) => {
       return User.findOne({ _id: userId });
+      s;
     },
 
     artwork: async (parent, { artworkId }) => {
@@ -20,6 +21,16 @@ const resolvers = {
     },
     event: async (parent, { eventId }) => {
       return Event.findOne({ _id: eventId });
+    },
+    me: async (parent, args, context) => {
+      if (context.user) {
+        const user = await User.findOne({ _id: context.user._id })
+          .populate("favorite_artists")
+          .populate("events")
+          .populate("artworks");
+        return user;
+      }
+      throw AuthenticationError;
     },
   },
 
@@ -69,9 +80,6 @@ const resolvers = {
         );
 
         return newArtwork;
-
-        console.log("help me");
-        throw AuthenticationError;
       }
 
       throw AuthenticationError;
@@ -104,18 +112,17 @@ const resolvers = {
     },
 
     removeArtwork: async (parent, { artworkId }) => {
-      return Artwork.findOneandDelete({ _id: artworkId });
+      return Artwork.findOneAndDelete({ _id: artworkId });
     },
 
     createArtist: async (parent, { name, bio }, context) => {
       if (!context.user) {
         throw AuthenticationError;
       }
-      return User.findOneandUpdate(
+      return User.findOneAndUpdate(
         { _id: context.user._id },
         {
           $addToSet: { artistData: { bio: bio, name: name } },
-          is_artist: true,
         },
 
         { new: true, runValidators: true }

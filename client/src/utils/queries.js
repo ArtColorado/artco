@@ -1,26 +1,29 @@
 import { gql } from "@apollo/client";
 
-export const QUERY_ARTIST = gql`
-  query User($userId: ID!) {
+export const QUERY_SINGLE_USER = gql`
+  query user($userId: ID!) {
     user(userId: $userId) {
+      username
       email
-      is_artist
       artistData {
-        events {
-          location
-          date
-          name
-        }
+        name
         bio
-        artWorks {
-          _id
-          description
-          imageURL
-          stock
-          title
-        }
       }
-      address
+      favorite_artists {
+        username
+      }
+      events {
+        name
+        location
+        date
+      }
+      artworks {
+        title
+        stock
+        description
+        category
+        imageURL
+      }
     }
   }
 `;
@@ -75,6 +78,17 @@ export const QUERY_EVENTS = gql`
       date
       location
       name
+    }
+  }
+`;
+
+export const QUERY_ME = gql`
+  query me {
+    me {
+      _id
+      username
+      email
+      artistData
     }
   }
 `;
