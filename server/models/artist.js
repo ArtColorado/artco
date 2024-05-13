@@ -1,6 +1,6 @@
 const { Schema } = require("mongoose");
 
-const artistSchema = new Schema({
+const Artist = new Schema({
   name: {
     type: String,
     required: true,
@@ -13,4 +13,4 @@ const artistSchema = new Schema({
   },
 });
 
-module.exports = artistSchema;
+module.exports = Artist;

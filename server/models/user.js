@@ -1,6 +1,5 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
-const Artist = require("./artist");
 
 const userSchema = new Schema(
   {
@@ -21,7 +20,14 @@ const userSchema = new Schema(
       required: true,
       minlength: 8,
     },
-    artistData: Artist,
+    name: {
+      type: String,
+    },
+    bio: {
+      type: String,
+      maxLength: 1000,
+      description: "bio can not be longer than 1,000 characters",
+    },
     favorite_artists: [
       {
         type: Schema.Types.ObjectId,

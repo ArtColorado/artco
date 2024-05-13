@@ -2,6 +2,7 @@ import { Col, Container, Row, Image } from "react-bootstrap";
 
 import Cloudinary from "./Upload";
 import { Link, useParams } from "react-router-dom";
+import ArtistInfoForm from "../components/ArtistInfo/index";
 import { useTheme } from "../utils/themeContext";
 import { useQuery } from "@apollo/client";
 
@@ -27,7 +28,7 @@ const Profile = () => {
   //Where will the user's _id be pull in from?
 
   const profile = Auth.getProfile().data;
-  console.log(profile._id);
+  console.log(profile);
   const { loading, data } = useQuery(QUERY_SINGLE_USER, {
     variables: { userId: profile._id },
   });
@@ -66,13 +67,13 @@ const Profile = () => {
             className="float-start"
             style={themeStyle2}
           />
-          {user.artistData ? (
-            <p>{user.artistData.bio}</p>
-          ) : (
+          {!user.bio ? (
             <>
               <p>Are you a local Colorado artist?</p>
-              <button>Add a brief bio</button>
+              <ArtistInfoForm />
             </>
+          ) : (
+            <p>{user.bio}</p>
           )}
         </Col>
       </Row>
@@ -81,53 +82,39 @@ const Profile = () => {
         <Col md="auto" className="text-center">
           {/* This should populate events that include this artist */}
           <h2>Upcoming Events</h2>
-          <ul>
-            <Link to="/event">
-              <li>Event 1</li>
-            </Link>
-            <Link to="/event">
-              <li>Event 2</li>
-            </Link>
-            <Link to="/event">
-              <li>Event 3</li>
-            </Link>
-          </ul>
+          {!user.events.length ? (
+            <p>NO UPCOMING EVENTS</p>
+          ) : (
+            <ul>
+              {user.events.map((event) => {
+                <Link to="/event/{event._id}">
+                  <li>{event.name}</li>
+                </Link>;
+              })}
+            </ul>
+          )}
         </Col>
         <Col xs lg="2"></Col>
       </Row>
-      <Row id="gallery" className="text-center">
-        {/* This should populate all the images of the artist's work */}
-        <Col xs={12} md={6} lg={4}>
-          <Image
-          className="mb-3"
-          style={themeStyle2}
-            src="/images/images-artwork/Elizabeth_Zimmerman_Baby_Surprise_Jacket.jpg"
-            fluid
-          />
-        </Col>
-        <Col xs={12} md={6} lg={4}>
-          <Image
-          className="mb-3"
-          style={themeStyle2}
-            src="/images/images-artwork/Elizabeth_Zimmerman_Contrast_Cardigan.jpg"
-            fluid
-          />
-        </Col>
-        <Col xs={12} md={6} lg={4}>
-          <Image
-          className="mb-3"
-          style={themeStyle2}
-            src="/images/images-artwork/Elizabeth_Zimmerman_Knitting_Around.jpg"
-            fluid
-          />
-        </Col>
+      <Row id="gallery">
+        {!user.artworks.length ? null : (
+          <>
+            {user.artworks.map((artwork) => {
+              <Col>
+                <Image src={artwork.imageURL} fluid />
+              </Col>;
+            })}
+          </>
+        )}
       </Row>
       {/* This button should only appear if this is the current user that is logged in */}
-      <Row className="justify-content-center">
-        <Col className="text-center mb-4">
-          <Link to="/addArt">Add Artwork</Link>
-        </Col>
-      </Row>
+      {!user.bio ? null : (
+        <Row className="justify-content-center">
+          <Col className="text-center mb-4">
+            <Link to="/addArt">Add Artwork</Link>
+          </Col>
+        </Row>
+      )}
       <Row style={{ height: "30px" }}></Row>
     </Container>
   );
