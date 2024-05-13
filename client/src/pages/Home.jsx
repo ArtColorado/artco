@@ -89,11 +89,14 @@ const Home = () => {
         <Col id="category-icon" xs={12} md={6} lg={4}>
           <Link to="/categories" onClick={handleCategoryClick}>
             <Card style={themeStyles2}>
-              <Card.Img id="category-image" src="/images/images-categories/jewelry.jpg" />
+              <Card.Img
+                id="category-image"
+                src="/images/images-categories/jewelry.jpg"
+              />
               <Card.ImgOverlay>
                 <Card.Title
                   style={{
-                    fontSize: "36px",
+                    fontSize: "32px",
                     color: "white",
                     WebkitTextStroke: "1px var(--brown-9)",
                     textShadow: "1px 1px 4px var(--brown-8)",
@@ -108,11 +111,14 @@ const Home = () => {
         <Col id="category-icon" xs={12} md={6} lg={4}>
           <Link to="#">
             <Card style={themeStyles2}>
-              <Card.Img id="category-image" src="/images/images-categories/painting.jpg" />
+              <Card.Img
+                id="category-image"
+                src="/images/images-categories/painting.jpg"
+              />
               <Card.ImgOverlay>
                 <Card.Title
                   style={{
-                    fontSize: "36px",
+                    fontSize: "32px",
                     color: "white",
                     WebkitTextStroke: "1px var(--brown-9)",
                     textShadow: "1px 1px 4px var(--brown-8)",
@@ -127,12 +133,15 @@ const Home = () => {
         <Col id="category-icon" xs={12} md={6} lg={4}>
           <Link to="#">
             <Card style={themeStyles2}>
-              <Card.Img id="category-image" src="/images/images-categories/photography.jpg" />
+              <Card.Img
+                id="category-image"
+                src="/images/images-categories/photography.jpg"
+              />
               <Card.ImgOverlay>
                 <Card.Title
                   style={{
                     whiteSpace: "nowrap",
-                    fontSize: "36px",
+                    fontSize: "32px",
                     color: "white",
                     WebkitTextStroke: "1px var(--brown-9)",
                     textShadow: "1px 1px 4px var(--brown-8)",
@@ -147,11 +156,14 @@ const Home = () => {
         <Col id="category-icon" xs={12} md={6} lg={4}>
           <Link to="#">
             <Card style={themeStyles2}>
-              <Card.Img id="category-image" src="/images/images-categories/pottery.jpg" />
+              <Card.Img
+                id="category-image"
+                src="/images/images-categories/pottery.jpg"
+              />
               <Card.ImgOverlay>
                 <Card.Title
                   style={{
-                    fontSize: "36px",
+                    fontSize: "32px",
                     color: "white",
                     WebkitTextStroke: "1px var(--brown-9)",
                     textShadow: "1px 1px 4px var(--brown-8)",
@@ -166,11 +178,14 @@ const Home = () => {
         <Col id="category-icon" xs={12} md={6} lg={4}>
           <Link to="#">
             <Card style={themeStyles2}>
-              <Card.Img id="category-image" src="/images/images-categories/textile.jpg" />
+              <Card.Img
+                id="category-image"
+                src="/images/images-categories/textile.jpg"
+              />
               <Card.ImgOverlay>
                 <Card.Title
                   style={{
-                    fontSize: "36px",
+                    fontSize: "32px",
                     color: "white",
                     WebkitTextStroke: "1px var(--brown-9)",
                     textShadow: "1px 1px 4px var(--brown-8)",
@@ -185,12 +200,12 @@ const Home = () => {
         <Col id="category-icon" xs={12} md={6} lg={4}>
           <Link to="#">
             <Card style={themeStyles2}>
-              <Card.Img src="/images/images-categories/woodworking.jpg" />
+              <Card.Img id="category-image" src="/images/images-categories/woodworking.jpg" />
               <Card.ImgOverlay>
                 <Card.Title
                   style={{
                     whiteSpace: "nowrap",
-                    fontSize: "36px",
+                    fontSize: "32px",
                     color: "white",
                     WebkitTextStroke: "1px var(--brown-9)",
                     textShadow: "1px 1px 4px var(--brown-8)",

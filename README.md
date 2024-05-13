@@ -24,11 +24,23 @@ Find local Colorado artists, and see where they will be exhibiting next. Or find
 
 ![homepage screenshot](./client/src/assets/screenshots/homepage.png)
 
+![signup page screenshot](./client/src/assets/screenshots/signup.png)
+
 ![login page screenshot](./client/src/assets/screenshots/login.png)
 
-## [Demonstration](#table-of-contents)
+![artist page screenshot](./client/src/assets/screenshots/artist.png)
 
-(add demonstration video here)
+![events page screenshot](./client/src/assets/screenshots/events.png)
+
+![single event page screenshot](./client/src/assets/screenshots/event-one.png)
+
+![create event page screenshot](./client/src/assets/screenshots/event-create.png)
+
+![categories page screenshot](./client/src/assets/screenshots/categories.png)
+
+<!-- ## [Demonstration](#table-of-contents)
+
+(add demonstration video here) -->
 
 ## [Installation](#table-of-contents)
 

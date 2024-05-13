@@ -15,8 +15,8 @@ const Artist = () => {
   const themeStyle2 = {
     border: state.darkTheme ? "5px solid var(--brown-3)" : "5px solid white",
     boxShadow: state.darkTheme
-    ? "2px 2px 5px var(--brown-9)"
-    : "2px 2px 5px var(--brown-2)",
+      ? "2px 2px 5px var(--brown-9)"
+      : "2px 2px 5px var(--brown-2)",
   };
 
   return (
@@ -24,7 +24,7 @@ const Artist = () => {
       <Row id="username" className="justify-content-center">
         {/* Pull in artist's name */}
         <Col md="auto" className="text-center">
-          <h1>User/Artist Name</h1>
+          <h1>Elizabeth Zimmerman</h1>
         </Col>
       </Row>
       <Row id="user">
@@ -38,18 +38,19 @@ const Artist = () => {
           />
           {/* Bio will be pulled in to populate this section */}
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            Perferendis sunt excepturi odit dolor at. Facilis, odit. Enim
-            aliquid dolorem delectus soluta quisquam id mollitia omnis veniam
-            quidem cumque aut, repudiandae, dolor saepe provident nemo iste non
-            dolores nobis est ad explicabo quo. Odit, ab vero eaque incidunt
-            necessitatibus ea quam unde doloremque provident eveniet mollitia
-            esse quo est inventore soluta quaerat molestiae. Dicta accusamus
-            qui, asperiores corrupti iste placeat facilis, explicabo, nam
-            provident officia vel laudantium magnam eligendi est libero odio
-            sint nemo tenetur beatae deleniti ipsa porro? Nemo laudantium
-            quisquam facilis maiores ea praesentium doloremque modi quis laborum
-            itaque.
+            Elizabeth Zimmermann was a British-born hand knitting teacher and
+            designer. She revolutionized the modern practice of knitting through
+            her books and instructional series on American public television.
+            Though knitting back and forth on rigid straight needles was the
+            norm, she advocated knitting in the round using flexible circular
+            needles to produce seamless garments and to make it easier to knit
+            intricate patterns. She also advocated the Continental knitting
+            method, claiming that it is the most efficient and quickest way to
+            knit. During World War II, German or continental knitting fell out
+            of favor in the UK and US due to its association with Germany. Many
+            English-language books on knitting are in the English or American
+            style. Elizabeth Zimmermann helped to re-introduce continental style
+            knitting to the United States.
           </p>
         </Col>
       </Row>
@@ -60,13 +61,13 @@ const Artist = () => {
           <h2>Upcoming Events</h2>
           <ul>
             <Link to="/event">
-              <li>Event 1</li>
+              <li>Denver Arts & Crafts Fair</li>
             </Link>
             <Link to="/event">
-              <li>Event 2</li>
+              <li>Boulder Artists and Artisans</li>
             </Link>
             <Link to="/event">
-              <li>Event 3</li>
+              <li>Bailey Art Extravaganza!</li>
             </Link>
           </ul>
         </Col>
@@ -76,24 +77,24 @@ const Artist = () => {
         {/* This should populate all the images of the artist's work */}
         <Col xs={12} md={6} lg={4}>
           <Image
-          className="mb-3"
-          style={themeStyle2}
+            className="mb-3"
+            style={themeStyle2}
             src="/images/images-artwork/Elizabeth_Zimmerman_Baby_Surprise_Jacket.jpg"
             fluid
           />
         </Col>
         <Col xs={12} md={6} lg={4}>
           <Image
-          className="mb-3"
-          style={themeStyle2}
+            className="mb-3"
+            style={themeStyle2}
             src="/images/images-artwork/Elizabeth_Zimmerman_Contrast_Cardigan.jpg"
             fluid
           />
         </Col>
         <Col xs={12} md={6} lg={4}>
           <Image
-          className="mb-3"
-          style={themeStyle2}
+            className="mb-3"
+            style={themeStyle2}
             src="/images/images-artwork/Elizabeth_Zimmerman_Knitting_Around.jpg"
             fluid
           />
