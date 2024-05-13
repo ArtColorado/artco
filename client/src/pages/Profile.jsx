@@ -68,7 +68,11 @@ const Profile = () => {
           {!user.bio ? (
             <>
               <p>Are you a local Colorado artist?</p>
+
+              <button style={{color: "white"}}>Add a brief bio</button>
+
               <ArtistInfoForm />
+
             </>
           ) : (
             <p>{user.bio}</p>
