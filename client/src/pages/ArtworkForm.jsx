@@ -7,6 +7,7 @@ import Cloudinary from "../pages/Upload";
 import { useTheme } from "../utils/themeContext";
 import "./login.css";
 
+
 function ArtworkForm(props) {
   const [state, dispatch] = useTheme();
 
@@ -32,11 +33,6 @@ function ArtworkForm(props) {
     <div className="site-width mx-auto" style={themeStyles1}>
       <Container style={themeStyles1}>
         <Row className="justify-content-center">
-          <Col md="auto">
-            <h2 id="login-page-intro">
-              <strong>Add Your Piece Of Art</strong>
-            </h2>
-          </Col>
         </Row>
       </Container>
       <Container className="whole-form" style={themeStyle2}>

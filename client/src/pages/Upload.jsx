@@ -54,12 +54,14 @@ export default function App() {
 
   return (
     <div className="App">
-      <h3>Add image</h3>
+      <div className="text-center">
+        <h3>Add your art to your profile here.</h3>
+      </div>
       <CloudinaryUploadWidget uwConfig={uwConfig} setPublicId={setPublicId} />
 
-      <div style={{ width: "100%" }}>
+      <div className="text-center" style={{ width: "100%" }}>
         <AdvancedImage
-          style={{ maxWidth: "100%" }}
+          style={{ maxWidth: "100%", maxHeight: "300px" }}
           cldImg={myImage}
           plugins={[responsive(), placeholder()]}
         />
