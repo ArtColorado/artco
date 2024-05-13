@@ -81,11 +81,11 @@ const Home = () => {
           <h4>Or explore our artists by category!</h4>
         </Col>
       </Row>
-      <Row>
-        <Link to="/categories">Categories Page</Link>
-      </Row>
-
       {/* <Row>
+        <Link to="/categories">Categories Page</Link>
+      </Row> */}
+
+      <Row>
         <Col id="category-icon" xs={12} md={6} lg={4}>
           <Link to="/categories" onClick={handleCategoryClick}>
             <Card style={themeStyles2}>
@@ -201,7 +201,7 @@ const Home = () => {
           </Link>
         </Col>
         <Col className="my-4"></Col>
-      </Row> */}
+      </Row>
     </Container>
   );
 };

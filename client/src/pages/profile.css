@@ -1,13 +1,17 @@
 @import url("../index.css");
 
 #userImage img {
-    width: 50%;
+    max-width: 50%;
+    width: auto;
+    height: auto;
     margin: 0 1rem 1rem 0;
 }
 
 @media (min-width: 768px) {
     #userImage img {
-        width: 25%;
+        max-width: 30%;
+        width: auto;
+        height: auto;
         margin: 0 2rem 1rem 0;
     }
   }

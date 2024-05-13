@@ -17,6 +17,13 @@ const Profile = () => {
     color: state.darkTheme ? "var(--brown-0)" : "var(--brown-9)",
   };
 
+  const themeStyle2 = {
+    border: state.darkTheme ? "5px solid var(--brown-3)" : "5px solid white",
+    boxShadow: state.darkTheme
+      ? "2px 2px 5px var(--brown-9)"
+      : "2px 2px 5px var(--brown-2)",
+  };
+
   //Need to pull in a user and set it up to pull keys from it for data
   //Where will the user's _id be pull in from?
 
@@ -58,6 +65,7 @@ const Profile = () => {
             src="/images/images-artists/Elizabeth_Zimmermann.jpg"
             fluid
             className="float-start"
+            style={themeStyle2}
           />
           {!user.bio ? (
             <>
