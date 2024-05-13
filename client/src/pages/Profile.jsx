@@ -71,7 +71,7 @@ const Profile = () => {
           ) : (
             <>
               <p>Are you a local Colorado artist?</p>
-              <button>Add a brief bio</button>
+              <button style={{color: "white"}}>Add a brief bio</button>
             </>
           )}
         </Col>

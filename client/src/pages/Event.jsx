@@ -22,7 +22,7 @@ const Event = () => {
       <Row>
         {/* Pull in event name */}
         <Col className="text-center">
-          <h1>Event Name</h1>
+          <h1>Denver Arts & Crafts Fair</h1>
         </Col>
       </Row>
       <Row>
@@ -32,22 +32,10 @@ const Event = () => {
         </Col>
         <Col>
           {/* Pull in date, time, and location */}
-          <h3>Event Date, Time, and Location</h3>
+          <h3>May 18, 2024 - May 19, 2024, 10am-8pm, Denver</h3>
           {/* Pull in description */}
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam
-            distinctio rem eaque tempora porro quasi at esse nemo? Error nihil
-            est natus, quos sit ratione doloribus consequuntur commodi
-            consequatur! Autem error, enim odio dicta ipsam dolorem! Aperiam
-            itaque blanditiis explicabo mollitia amet. Quasi voluptas tempora
-            asperiores velit commodi, quos, delectus sunt ab consectetur
-            eligendi aperiam quia. Quas perspiciatis fugiat, nostrum at nobis
-            aperiam excepturi expedita, perferendis optio vel eos facilis
-            blanditiis incidunt nesciunt quasi necessitatibus quaerat.
-            Exercitationem, odit, repellat dicta architecto quas beatae numquam
-            reiciendis magni tenetur iste perferendis quae accusantium eius
-            necessitatibus maiores blanditiis voluptates excepturi, tempore
-            cupiditate aliquam.
+          Come to Denver and meet local artists from all around Colorado! See a wide variety of arts and artists, from photography and painting to textile arts and woodworking.
           </p>
         </Col>
       </Row>
@@ -57,7 +45,7 @@ const Event = () => {
         </Col>
         <Col lg="2">
           {/* This button will only populate if an artist is signed in */}
-          <Button variant="success" type="button">
+          <Button style={{backgroundColor: "var(--brown-5)", border: "none"}} type="button">
             Attending this event
           </Button>
         </Col>

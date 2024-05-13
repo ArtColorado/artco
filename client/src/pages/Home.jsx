@@ -89,7 +89,7 @@ const Home = () => {
         <Col id="category-icon" xs={12} md={6} lg={4}>
           <Link to="/categories" onClick={handleCategoryClick}>
             <Card style={themeStyles2}>
-              <Card.Img src="/images/images-categories/jewelry.jpg" />
+              <Card.Img id="category-image" src="/images/images-categories/jewelry.jpg" />
               <Card.ImgOverlay>
                 <Card.Title
                   style={{
@@ -108,7 +108,7 @@ const Home = () => {
         <Col id="category-icon" xs={12} md={6} lg={4}>
           <Link to="#">
             <Card style={themeStyles2}>
-              <Card.Img src="/images/images-categories/painting.jpg" />
+              <Card.Img id="category-image" src="/images/images-categories/painting.jpg" />
               <Card.ImgOverlay>
                 <Card.Title
                   style={{
@@ -127,10 +127,11 @@ const Home = () => {
         <Col id="category-icon" xs={12} md={6} lg={4}>
           <Link to="#">
             <Card style={themeStyles2}>
-              <Card.Img src="/images/images-categories/photography.jpg" />
+              <Card.Img id="category-image" src="/images/images-categories/photography.jpg" />
               <Card.ImgOverlay>
                 <Card.Title
                   style={{
+                    whiteSpace: "nowrap",
                     fontSize: "36px",
                     color: "white",
                     WebkitTextStroke: "1px var(--brown-9)",
@@ -146,7 +147,7 @@ const Home = () => {
         <Col id="category-icon" xs={12} md={6} lg={4}>
           <Link to="#">
             <Card style={themeStyles2}>
-              <Card.Img src="/images/images-categories/pottery.jpg" />
+              <Card.Img id="category-image" src="/images/images-categories/pottery.jpg" />
               <Card.ImgOverlay>
                 <Card.Title
                   style={{
@@ -165,7 +166,7 @@ const Home = () => {
         <Col id="category-icon" xs={12} md={6} lg={4}>
           <Link to="#">
             <Card style={themeStyles2}>
-              <Card.Img src="/images/images-categories/textile.jpg" />
+              <Card.Img id="category-image" src="/images/images-categories/textile.jpg" />
               <Card.ImgOverlay>
                 <Card.Title
                   style={{
@@ -188,6 +189,7 @@ const Home = () => {
               <Card.ImgOverlay>
                 <Card.Title
                   style={{
+                    whiteSpace: "nowrap",
                     fontSize: "36px",
                     color: "white",
                     WebkitTextStroke: "1px var(--brown-9)",
